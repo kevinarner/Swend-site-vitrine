@@ -3,132 +3,206 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Swend — Un repas, un secret</title>
-  <meta name="description" content="Swend : fixez un repas à l'avance avec un ami, sans jamais savoir qui sera vraiment là.">
-  <link rel="icon" href="assets/logo_mains.png">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #F5E4CB;
-      color: #3C2A1B;
-    }
-    a { color: #6B7A94; }
-    a:hover { color: #3F4C63; }
-    h1, h2, .disp { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      height: 50px;
-      padding: 0 26px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .btn-ghost {
-      background: transparent;
-      color: #93795C;
-      border: 1.5px solid #EBD8B7;
-      height: 46px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-  </style>
+  <title>Swend — Un restaurant. Une date. Un engagement.</title>
+  <meta name="description" content="Pour que l’envie de se retrouver entre amis devienne un vrai rendez-vous, même au milieu d’agendas bien remplis.">
+  <link rel="icon" href="assets/swend-mains.png">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-
-<div style="width: 100%; min-height: 100vh; background: #F5E4CB; display: flex; flex-direction: column;">
-
-  <!-- Nav -->
-  <header style="width: 100%; padding: 20px 24px; display: flex; align-items: center; max-width: 1100px; margin: 0 auto; gap: 16px;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <img src="assets/logo_mains.png" alt="Swend" style="width: 30px; height: auto;">
-      <span class="disp" style="font-size: 19px; color: #3C2A1B;">Swend</span>
-    </div>
+<div id="swend">
+<header>
+    <img class="sw-logo-image" src="assets/swend-logo-138.png" srcset="assets/swend-logo-138.png 1x, assets/swend-logo-138@2x.png 2x, assets/swend-logo-138@3x.png 3x" alt="Swend">
+    <nav aria-label="Navigation principale">
+      <button type="button" class="cursor-interaction" data-page="concept" aria-current="page">Découvrir Swend</button>
+      <button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button>
+      <button type="button" class="cursor-interaction" data-page="contact">Contact</button>
+      <a class="sw-app" href="https://kevinarner.github.io/le_pacte/" target="_blank" rel="noopener noreferrer">Ouvrir l’application</a>
+    </nav>
   </header>
-
-  <!-- Hero -->
-  <section style="width: 100%; max-width: 780px; margin: 0 auto; padding: 56px 24px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
-    <span style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7A94; background: #DEE3EA; padding: 7px 16px; border-radius: 999px;">
-      L'app qui garde le secret jusqu'au bout
+  <main>
+    <div data-content="concept">
+      <section class="sw-hero">
+        <div>
+          <p class="sw-eyebrow">Le plaisir de se retrouver. L’engagement d’y être.</p>
+          <h1>Un restaurant.<br>Une date.<br>Un engagement.</h1>
+          <p class="sw-lead">Pour que l’envie de se retrouver entre amis devienne un vrai rendez-vous, même au milieu d’agendas bien remplis.</p>
+          <div class="sw-actions"><a class="sw-link" href="https://kevinarner.github.io/le_pacte/" target="_blank" rel="noopener noreferrer">Créer mon Swend →</a><button type="button" class="sw-discover cursor-interaction" data-scroll="sw-steps">Découvrir le principe ↓</button></div>
+        </div>
+        <button type="button" class="sw-flip cursor-interaction" aria-label="Retourner la carte pour découvrir la définition de Swend" aria-pressed="false">
+  <span class="sw-flip-inner">
+    <span class="sw-face sw-front"><span class="sw-fold" aria-hidden="true"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sw-curl-0" x1="90%" y1="90%" x2="15%" y2="15%">
+      <stop offset="0" stop-color="#d5bfa2"/>
+      <stop offset=".28" stop-color="#e9d9c1"/>
+      <stop offset=".64" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f5ead8"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 60 C17 49 48 21 60 0 C52 13 38 22 23 18 Q17 16 18 22 C21 36 15 52 0 60Z" fill="url(#sw-curl-0)"/>
+  <path d="M0 60 C17 49 48 21 60 0" fill="none" stroke="#dbc7ac" stroke-width=".6"/>
+</svg>
+</span>
+      <img class="sw-logo-image sw-card-wordmark" src="assets/swend-logo-150.png" srcset="assets/swend-logo-150.png 1x, assets/swend-logo-150@2x.png 2x, assets/swend-logo-150@3x.png 3x" alt="Swend">
+      <span class="sw-card-lines"><span>Le lieu est choisi.</span><span>La date est fixée.</span><span>La suite se découvre</span><span>sur place.</span></span>
+      <span class="sw-seal" aria-hidden="true"><img class="sw-seal-logo" src="assets/swend-mains.png" alt=""></span>
+      <span class="sw-flip-hint sw-definition-hint">Qu’est-ce qu’un Swend ?</span>
     </span>
-    <h1 style="margin: 0; font-size: clamp(32px, 5.5vw, 52px); line-height: 1.12; color: #3C2A1B;">
-      Fixez un repas.<br>Gardez le mystère.
-    </h1>
-    <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3C2A1B; max-width: 560px;">
-      Avec Swend, vous fixez à l'avance un déjeuner ou un dîner avec un ami — mais jusqu'au dernier moment, personne ne sait qui sera vraiment là : vous, ou l'un de vos remplaçants secrets.
-    </p>
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 8px;">
-      <span style="font-size: 11.5px; color: #93795C; letter-spacing: 0.04em; text-transform: uppercase;">Bientôt disponible</span>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-        <button class="btn btn-ghost" disabled aria-label="App Store — bientôt disponible">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16.5 12.3c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8-.7 0-1.9-.8-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.3 1.2 9.6.8 1.2 1.7 2.4 3 2.4 1.2 0 1.6-.8 3.1-.8s1.9.8 3.1.7c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.6-1-2.7-3.9z" stroke="#93795C" stroke-width="1.3" stroke-linejoin="round"/><path d="M14.7 5.5c.6-.7 1-1.7.9-2.7-.9.1-1.9.6-2.5 1.3-.6.6-1.1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z" stroke="#93795C" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          App Store
-        </button>
-        <button class="btn btn-ghost" disabled aria-label="Google Play — bientôt disponible">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4.5l11 7.5-11 7.5v-15z" stroke="#93795C" stroke-width="1.3" stroke-linejoin="round"/><path d="M16 12l3.5-2" stroke="#93795C" stroke-width="1.3" stroke-linecap="round"/><path d="M16 12l3.5 2" stroke="#93795C" stroke-width="1.3" stroke-linecap="round"/></svg>
-          Google Play
-        </button>
-      </div>
+    <span class="sw-face sw-back" aria-hidden="true"><span class="sw-fold" aria-hidden="true"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sw-curl-1" x1="90%" y1="90%" x2="15%" y2="15%">
+      <stop offset="0" stop-color="#d5bfa2"/>
+      <stop offset=".28" stop-color="#e9d9c1"/>
+      <stop offset=".64" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f5ead8"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 60 C17 49 48 21 60 0 C52 13 38 22 23 18 Q17 16 18 22 C21 36 15 52 0 60Z" fill="url(#sw-curl-1)"/>
+  <path d="M0 60 C17 49 48 21 60 0" fill="none" stroke="#dbc7ac" stroke-width=".6"/>
+</svg>
+</span>
+      <span class="sw-definition-title">Swend <em>n.m.</em></span>
+      <span class="sw-definition" lang="fr">Un rendez-vous au restaurant fixé à l’avance, puis on n’en parle plus jusqu’au jour J. Si l’un ne peut plus venir, une personne choisie à l’avance peut prendre sa place, sans prévenir l’autre.</span>
+      <span class="sw-flip-hint">Une promesse entre amis.</span>
+    </span>
+  </span>
+</button>
+</section>
+      
+      <section class="sw-section" id="sw-steps">
+        <p class="sw-eyebrow">Comment ça marche</p>
+        <h2>Un rendez-vous pour lequel on s’engage : un Swend.</h2>
+        <div class="sw-grid">
+          <article class="sw-step"><h3>Scellez votre Swend.</h3><p>Invitez un ami et choisissez ensemble un restaurant, une date et une heure. Pour déjeuner ou dîner, à vous de décider.</p></article>
+          <article class="sw-step"><h3>N’en parlez plus jusqu’au jour J</h3><p>Une fois votre Swend scellé, vous vous engagez à être là et vous n’en reparlez plus jusqu’au jour J. Pas même un <span class="sw-keep-together">« toujours bon pour demain ? ».</span></p></article>
+          <article class="sw-step"><h3>Découvrez qui est là.</h3><p>Le jour venu, rendez-vous au restaurant. Vous y retrouvez votre ami… ou la personne qu’il a choisie pour prendre sa place.</p></article>
+        </div>
+      </section>
+      <section class="sw-note"><div><p class="sw-eyebrow sw-underlined">En cas d’imprévu</p><h2>Quelqu’un de confiance.<br>Une surprise préservée.</h2></div><div><p>Chacun prévoit quelques personnes à solliciter s’il n’est finalement plus disponible. Si l’une d’elles accepte, elle prend sa place sans prévenir l’autre participant.</p><p>La surprise vient de votre entourage : c’est vous qui choisissez à qui faire appel.</p></div></section>
+      
+      <section class="sw-app-preview" aria-labelledby="sw-app-preview-title">
+        <div class="sw-app-preview-copy">
+          <p class="sw-eyebrow">Dans l’application</p>
+          <h2 id="sw-app-preview-title">Votre prochain swend.</h2>
+          <p class="sw-lead">Vous pensez à quelqu’un ?</p>
+          <p>Choisissez la personne avec qui vous voulez partager ce moment. L’application vous accompagne ensuite pour préparer votre Swend.</p>
+          <span class="sw-hand sw-app-annotation">C’est noté. C’est promis.</span>
+        </div>
+        <figure class="sw-phone-figure">
+          <div class="sw-phone-frame">
+            <img class="sw-app-screenshot" src="assets/application-creation.jpg" width="1170" height="2007" alt="Écran de création d’un Swend : Avec qui ? Étape 1 sur 3, avec les champs prénom, nom et numéro de mobile." loading="lazy">
+          </div>
+          <figcaption>Le premier pas : choisir avec qui.</figcaption>
+        </figure>
+      </section>
+
+<section class="sw-story" aria-labelledby="sw-story-title">
+        <div class="sw-story-inner">
+          <p class="sw-eyebrow">À l’origine de Swend</p>
+          <h2 id="sw-story-title">« On se fait un resto bientôt ? »</h2>
+          <p>On le dit sincèrement. Puis les agendas se remplissent, on peine à trouver une date, on reporte. Et parfois, même quand le rendez-vous est pris, on l’annule trop facilement.</p>
+          <p>Avant de devenir une application, Swend était un rituel entre amis : choisir un restaurant, fixer une date longtemps à l’avance, s’engager et ne plus en parler jusqu’au jour venu. Une façon de donner à ce rendez-vous une place particulière dans nos agendas et à notre amitié.</p>
+          <p>On a ensuite ajouté une règle pour y glisser une once de fun et d’inattendu : en cas d’imprévu, on pouvait envoyer quelqu’un à notre place. Un ami en commun, quelqu’un qu’on avait envie de faire rencontrer à l’autre… N’importe qui tant que ça pouvait matcher en fait. Le tout sans prévenir, pour que le rendez-vous continue, avec une touche de mystère.</p>
+          <p class="sw-purpose">Swend est né pour redonner du poids à nos « on se voit », faire du rendez-vous un engagement auquel on tient, et de l’attente une partie du plaisir.</p>
+        </div>
+      </section>
+<section class="sw-finale"><span class="sw-hand">À vous de jouer.</span><h2>Et si on faisait un Swend ?</h2><p>Vous avez déjà quelqu’un en tête ?</p><a class="sw-link" href="https://kevinarner.github.io/le_pacte/" target="_blank" rel="noopener noreferrer">Créer mon Swend →</a></section>
     </div>
+    <div data-content="restaurants" hidden>
+      <section class="sw-restaurant-intro" aria-labelledby="sw-restaurant-intro-title">
+        <p class="sw-eyebrow">Restaurants partenaires</p>
+        <h1 id="sw-restaurant-intro-title">Faites découvrir votre table.<br>Donnez envie d’y revenir.</h1>
+        <p class="sw-lead">Notre ambition : faire découvrir votre établissement à de nouveaux clients, autour d’un rendez-vous auquel ils tiennent.</p>
+        <div class="sw-partner-context">
+          <p>Deux personnes choisissent votre établissement pour un rendez-vous dont elles ne parlent plus jusqu’au jour J. En cas d’imprévu, une personne de confiance peut prendre la place de l’une d’elles, en gardant la surprise.</p>
+          <div>
+            <p>Faites partie des premiers restaurants à accueillir l’expérience Swend.</p>
+            <button type="button" class="sw-link cursor-interaction" data-page="contact">Échangeons sur votre restaurant →</button>
+          </div>
+        </div>
+      </section>
+      <section class="sw-section"><p class="sw-eyebrow">Construisons les premiers Swends ensemble</p><h2>L’expérience fait partie de l’histoire.</h2><div class="sw-grid">
+        <article class="sw-step"><h3>Accueillir les rendez-vous.</h3><p>Vous recevez les réservations Swend selon les disponibilités convenues ensemble. Nous définissons avec vous un fonctionnement adapté à votre organisation.</p></article>
+        <article class="sw-step"><h3>Imaginer une attention.</h3><p>Une entrée de votre choix à partager, une boisson ou une dégustation : discutons du geste qui donnera à ce repas une saveur particulière.</p></article>
+        <article class="sw-step"><h3>Tester et faire le bilan.</h3><p>Commençons par quelques réservations. Vos retours et ceux des convives nous aideront à ajuster l’expérience ensemble.</p></article>
+      </div></section>
+<section class="sw-story sw-restaurant-story" aria-labelledby="sw-restaurant-fit-title">
+  <div class="sw-story-inner">
+    <p class="sw-eyebrow">Les lieux où l’on se retrouve</p>
+    <h2 id="sw-restaurant-fit-title">Des restaurants swendy.</h2>
+    <p>Des lieux chaleureux, plutôt intimistes, où l’on se sent bien accueilli et où le service est attentionné. Des tables où l’on prend plaisir à se retrouver, à prendre son temps et à se parler, tout simplement.</p>
+    <p class="sw-purpose">Notre envie : faire découvrir votre restaurant à de nouveaux clients, leur donner une occasion de venir et l’envie de revenir.</p>
+  </div>
+</section>
+      <section class="sw-personal-touch" aria-labelledby="sw-personal-touch-title">
+        <div>
+          <p class="sw-eyebrow">À imaginer ensemble</p>
+          <h2 id="sw-personal-touch-title">Une attention qui vous ressemble.</h2>
+          <p>Votre accueil donne le ton. Une petite attention peut rendre ce moment encore plus singulier.</p>
+          <p>Imaginons un geste adapté à votre maison et à votre façon de recevoir, pour que chaque Swend y trouve sa place.</p>
+        </div>
+        <button type="button" class="sw-flip sw-restaurant-flip cursor-interaction" aria-label="Retourner la carte pour découvrir des idées d’attentions" aria-pressed="false" data-front-label="Revenir à votre touche personnelle" data-back-label="Découvrir des idées d’attentions">
+  <span class="sw-flip-inner">
+    <span class="sw-face sw-front">
+      <span class="sw-fold" aria-hidden="true"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sw-curl-resto-0" x1="90%" y1="90%" x2="15%" y2="15%">
+      <stop offset="0" stop-color="#d5bfa2"/>
+      <stop offset=".28" stop-color="#e9d9c1"/>
+      <stop offset=".64" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f5ead8"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 60 C17 49 48 21 60 0 C52 13 38 22 23 18 Q17 16 18 22 C21 36 15 52 0 60Z" fill="url(#sw-curl-resto-0)"/>
+  <path d="M0 60 C17 49 48 21 60 0" fill="none" stroke="#dbc7ac" stroke-width=".6"/>
+</svg>
+</span>
+      <span class="sw-eyebrow">Votre touche personnelle</span>
+      <span class="sw-restaurant-message">Imaginons ensemble une attention qui ressemble à votre maison.</span>
+      <span class="sw-seal" aria-hidden="true"><img class="sw-seal-logo" src="assets/swend-mains.png" alt=""></span>
+      <span class="sw-flip-hint sw-definition-hint">Quelle sera la vôtre ?</span>
+    </span>
+    <span class="sw-face sw-back" aria-hidden="true">
+      <span class="sw-fold" aria-hidden="true"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="sw-curl-resto-1" x1="90%" y1="90%" x2="15%" y2="15%">
+      <stop offset="0" stop-color="#d5bfa2"/>
+      <stop offset=".28" stop-color="#e9d9c1"/>
+      <stop offset=".64" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f5ead8"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 60 C17 49 48 21 60 0 C52 13 38 22 23 18 Q17 16 18 22 C21 36 15 52 0 60Z" fill="url(#sw-curl-resto-1)"/>
+  <path d="M0 60 C17 49 48 21 60 0" fill="none" stroke="#dbc7ac" stroke-width=".6"/>
+</svg>
+</span>
+      <span class="sw-definition-title sw-attention-title">Une attention<br>qui compte.</span>
+      <span class="sw-definition sw-attention-copy" lang="fr">Pourquoi ne pas proposer une entrée à partager, une boisson ou une petite dégustation ? L’attention de votre choix, pour marquer le coup.</span>
+      <span class="sw-flip-hint">À imaginer ensemble, selon vos envies.</span>
+    </span>
+  </span>
+</button>
+      </section>
+
+      <section class="sw-note"><div><p class="sw-eyebrow">Un modèle à construire ensemble</p><h2>Une rémunération liée aux couverts accueillis.</h2></div><div><p>Le modèle envisagé repose sur une commission par couvert réellement servi, calculée à partir d’un ticket moyen défini avec vous.</p><p>Les conditions du partenariat et l’éventuelle attention offerte sont discutées ensemble avant les premiers essais.</p></div></section>
+      <div class="sw-ending"><div><h2>Et si l’aventure commençait chez vous ?</h2><p>Parlons de votre établissement et de vos envies.</p></div><button type="button" class="sw-link cursor-interaction" data-page="contact">Nous contacter →</button></div>
+    </div>
+<div data-content="contact" hidden>
+  <section class="sw-contact-section">
+    <p class="sw-eyebrow">Contact</p>
+    <h1>On en parle ?</h1>
+    <p class="sw-lead">Une question sur Swend, une idée à partager ou l’envie de devenir restaurant partenaire ? Écrivez-nous.</p>
+    <a class="sw-contact-address" href="mailto:contact@swend.fr">contact@swend.fr</a>
+    <div class="sw-actions">
+      <a class="sw-link" href="mailto:contact@swend.fr">Écrire un e-mail →</a>
+      <button class="sw-copy cursor-interaction" type="button">Copier l’adresse</button>
+    </div>
+    <p class="sw-copy-status" role="status" aria-live="polite"></p>
   </section>
-
-  <!-- Comment ça marche -->
-  <section style="width: 100%; max-width: 1000px; margin: 32px auto 0; padding: 40px 24px;">
-    <h2 style="margin: 0 0 28px; font-size: 26px; text-align: center; color: #3C2A1B;">Comment ça marche</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-
-      <div style="background: #FCF0DD; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: #DEE3EA; display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-weight: 700; color: #3F4C63; font-size: 16px;">1</div>
-        <h3 style="margin: 0; font-size: 16.5px; color: #3C2A1B;">Vous proposez une date</h3>
-        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #93795C;">Choisissez un déjeuner ou un dîner, et une ou plusieurs dates possibles avec la personne de votre choix.</p>
-      </div>
-
-      <div style="background: #FCF0DD; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: #FBE2C4; display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-weight: 700; color: #8A5A2B; font-size: 16px;">2</div>
-        <h3 style="margin: 0; font-size: 16.5px; color: #3C2A1B;">Vous gardez un joker</h3>
-        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #93795C;">Chacun peut, en secret, désigner un remplaçant en cas d'empêchement — sans jamais prévenir l'autre.</p>
-      </div>
-
-      <div style="background: #FCF0DD; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;">
-        <div style="width: 40px; height: 40px; border-radius: 50%; background: #DEE3EA; display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-weight: 700; color: #3F4C63; font-size: 16px;">3</div>
-        <h3 style="margin: 0; font-size: 16.5px; color: #3C2A1B;">Le jour J, la surprise</h3>
-        <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #93795C;">Vous vous retrouvez… sans savoir à l'avance si c'est votre ami, ou l'un de ses remplaçants, qui sera en face de vous.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- La règle du secret -->
-  <section style="width: 100%; max-width: 1000px; margin: 24px auto 0; padding: 8px 24px 48px;">
-    <div style="background: #3F4C63; border-radius: 20px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
-      <img src="assets/logo_mains_blanc.png" alt="" style="width: 34px; height: auto;">
-      <h2 style="margin: 0; font-size: 22px; color: #FFFFFF;">Le secret, ça se respecte</h2>
-      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #DEE3EA; max-width: 520px;">
-        Personne — ni vous, ni votre ami — ne peut savoir à l'avance qui a fait appel à un remplaçant. Et si vous avez chacun dû vous faire remplacer, le pacte s'annule simplement : il ne reste qu'à s'en refaire un, une prochaine fois.
-      </p>
-    </div>
-  </section>
-
-  <div style="flex: 1"></div>
-
-  <!-- Footer -->
-  <footer style="width: 100%; border-top: 1px solid #EBD8B7; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <img src="assets/logo_mains.png" alt="" style="width: 20px; height: auto;">
-      <span class="disp" style="font-size: 14px; color: #3C2A1B;">Swend</span>
-    </div>
-    <a href="mailto:contact@swend.fr" style="font-size: 13px; color: #93795C; text-decoration: none;">contact@swend.fr</a>
-    <span style="font-size: 12px; color: #93795C;">© 2026 Swend</span>
-  </footer>
-
 </div>
+  </main>
+  <footer><img class="sw-logo-image" src="assets/swend-logo-138.png" srcset="assets/swend-logo-138.png 1x, assets/swend-logo-138@2x.png 2x, assets/swend-logo-138@3x.png 3x" alt="Swend"><div class="sw-footer-links"><button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button><a href="mailto:contact@swend.fr">contact@swend.fr</a></div></footer>
+</div>
+<script src="assets/site.js"></script>
 </body>
 </html>
