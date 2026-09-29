@@ -133,3 +133,19 @@ body{margin:0;background:#fbf3e5}
     @media(max-width:760px){#swend .sw-hero,#swend .sw-personal-touch{grid-template-columns:1fr}#swend .sw-flip{max-width:330px;justify-self:center;margin:12px 0}#swend .sw-grid{grid-template-columns:1fr;gap:12px}#swend .sw-app-preview{gap:25px}#swend .sw-app-preview h2{font-size:29px}}
     @media(max-width:620px){#swend .sw-app-preview,#swend .sw-partner-context{grid-template-columns:1fr}#swend .sw-app-preview{padding-top:24px;gap:30px}#swend .sw-restaurant-intro{padding-top:35px}#swend .sw-personal-touch{gap:25px;padding-top:30px}#swend .sw-partner-context{gap:8px}#swend .sw-phone-figure{max-width:200px}}
   
+/* Téléphone uniquement (≤ 620 px) — la version ordinateur est inchangée.
+   1. Accueil : la carte Swend remonte juste sous le titre, pour apparaître
+      dès le premier écran ; l'accroche et les boutons suivent.
+   2. « Comment ça marche » : les trois étapes deviennent des cartes qu'on fait
+      glisser du doigt, la suivante dépassant du bord, avec un repère 1 / 3. */
+@media(max-width:620px){
+  #swend .sw-hero{row-gap:0}
+  #swend .sw-hero>div{display:contents}
+  #swend .sw-hero .sw-flip{order:1;margin:2px 0 34px}
+  #swend .sw-hero .sw-lead,#swend .sw-hero .sw-actions{order:2}
+  #swend .sw-hero .sw-lead{margin-top:0}
+  #swend #sw-steps .sw-grid{counter-reset:sw-etape;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:24px -7vw 0;padding:4px 7vw 28px;scroll-padding-inline:7vw;scrollbar-width:none;overscroll-behavior-x:contain}
+  #swend #sw-steps .sw-grid::-webkit-scrollbar{display:none}
+  #swend #sw-steps .sw-step{flex:0 0 78%;scroll-snap-align:start;border:1px solid var(--sw-line);border-radius:5px;background:var(--sw-paper);box-shadow:0 2px 3px #39291f0d,2px 9px 18px #39291f17;padding:20px 22px 14px}
+  #swend #sw-steps .sw-step::before{counter-increment:sw-etape;content:counter(sw-etape) " / 3";display:block;font-size:11px;letter-spacing:2px;color:var(--sw-wine);margin-bottom:14px}
+}
