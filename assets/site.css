@@ -1,11 +1,10 @@
 /* Swend — site vitrine (version validée du 29/09/2026).
    Règles extraites telles quelles de maquette-source.html, dans leur ordre
    d'origine. En tête : le socle de page qui remplace l'enveloppe de l'aperçu
-   (fond, marges, liens et curseurs tels qu'ils y étaient rendus). */
+   (fond, marges, liens sans soulignement, curseurs). */
 html{color-scheme:light;background:#fbf3e5}
 body{margin:0;background:#fbf3e5}
 #swend a{text-decoration:none;cursor:pointer}
-#swend a:is(:hover,:focus-visible){text-decoration-line:underline;text-decoration-style:dashed;text-decoration-thickness:.5px}
 #swend .cursor-interaction{cursor:pointer}
     #swend{--sw-bg:#fbf3e5;--sw-ink:#39291f;--sw-wine:#742d43;--sw-paper:#fffcf6;--sw-line:#deceba;background:var(--sw-bg);color:var(--sw-ink);font-family:Arial,sans-serif;font-size:15px;line-height:1.65;overflow:hidden;color-scheme:light}
     #swend *{box-sizing:border-box}
