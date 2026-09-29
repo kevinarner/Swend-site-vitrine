@@ -6,6 +6,11 @@ html{color-scheme:light;background:#fbf3e5}
 body{margin:0;background:#fbf3e5}
 #swend a{text-decoration:none;cursor:pointer}
 #swend .cursor-interaction{cursor:pointer}
+/* Logo : images détourées qui intègrent déjà l'éclaircissement et la fusion
+   de la maquette (filter + mix-blend-mode), calibrées sur son rendu à la
+   taille d'affichage (1x, 2x, 3x) : Safari iOS n'applique pas cette fusion.
+   Même boîte que l'original (1332 × 514), image dessinée sans redimension. */
+#swend img.sw-logo-image{filter:none;mix-blend-mode:normal;aspect-ratio:1332/514;object-fit:none;object-position:0 0}
     #swend{--sw-bg:#fbf3e5;--sw-ink:#39291f;--sw-wine:#742d43;--sw-paper:#fffcf6;--sw-line:#deceba;background:var(--sw-bg);color:var(--sw-ink);font-family:Arial,sans-serif;font-size:15px;line-height:1.65;overflow:hidden;color-scheme:light}
     #swend *{box-sizing:border-box}
     #swend header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 5%;border-bottom:1px solid var(--sw-line);flex-wrap:wrap}
