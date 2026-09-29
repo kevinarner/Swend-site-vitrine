@@ -1,0 +1,131 @@
+/* Swend — site vitrine (version validée du 29/09/2026).
+   Règles extraites telles quelles de maquette-source.html, dans leur ordre
+   d'origine. En tête : le socle de page qui remplace l'enveloppe de l'aperçu
+   (fond, marges, liens et curseurs tels qu'ils y étaient rendus). */
+html{color-scheme:light;background:#fbf3e5}
+body{margin:0;background:#fbf3e5}
+#swend a{text-decoration:none;cursor:pointer}
+#swend a:is(:hover,:focus-visible){text-decoration-line:underline;text-decoration-style:dashed;text-decoration-thickness:.5px}
+#swend .cursor-interaction{cursor:pointer}
+    #swend{--sw-bg:#fbf3e5;--sw-ink:#39291f;--sw-wine:#742d43;--sw-paper:#fffcf6;--sw-line:#deceba;background:var(--sw-bg);color:var(--sw-ink);font-family:Arial,sans-serif;font-size:15px;line-height:1.65;overflow:hidden;color-scheme:light}
+    #swend *{box-sizing:border-box}
+    #swend header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 5%;border-bottom:1px solid var(--sw-line);flex-wrap:wrap}
+    #swend .sw-logo{font-family:Georgia,serif;font-size:29px;color:var(--sw-wine);letter-spacing:-1px}
+    #swend nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    #swend button,#swend a{font:inherit;color:inherit}
+    #swend nav button{border:0;border-bottom:2px solid transparent;background:transparent;padding:8px 0;font-size:13px}
+    #swend nav button[aria-current="page"]{border-bottom-color:var(--sw-wine);color:var(--sw-wine)}
+    #swend nav a{font-size:13px;text-decoration:none;padding:8px 0}
+    #swend .sw-hero{padding:58px 7% 45px;display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:35px}
+    #swend .sw-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--sw-wine);margin:0 0 20px}
+    #swend h1{font:400 clamp(32px,4.5vw,51px)/1.08 Georgia,serif;letter-spacing:-1.5px;margin:0 0 23px}
+    #swend h2{font:400 29px/1.2 Georgia,serif;letter-spacing:-.5px;margin:0 0 16px}
+    #swend h3{font:400 21px/1.25 Georgia,serif;margin:14px 0 10px}
+    #swend p{margin:0 0 17px}
+    #swend .sw-lead{font-size:17px;max-width:470px}
+    #swend .sw-link{display:inline-block;background:var(--sw-wine);color:var(--sw-paper);padding:11px 20px;border:0;border-radius:30px;text-decoration:none;font-size:13px}
+    #swend .sw-invitation{background:var(--sw-paper);border:1px solid var(--sw-line);padding:33px 22px;text-align:center;transform:rotate(3deg);box-shadow:0 2px 3px #39291f0d,2px 9px 18px #39291f17;border-radius:4px}
+    #swend .sw-invitation .sw-letter{font:400 27px/1.3 Georgia,serif;margin:13px 0}
+    #swend .sw-seal{display:grid;place-items:center;border-radius:50%;background:var(--sw-wine);color:var(--sw-paper);width:54px;height:54px;margin:22px auto 0;font-family:Georgia,serif;font-size:24px}
+    #swend .sw-section{padding:35px 7%}
+    #swend .sw-story{padding:42px 7%;background:var(--sw-paper);margin:10px 0 12px}
+    #swend .sw-story-inner{max-width:640px;margin:auto}
+    #swend .sw-story h2{font-size:34px;margin-bottom:25px}
+    #swend .sw-story .sw-purpose{font:400 23px/1.5 Georgia,serif;color:var(--sw-wine);border-top:1px solid var(--sw-line);padding-top:24px;margin-top:26px;margin-bottom:0}
+    #swend .sw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px}
+    #swend .sw-step{border-top:1px solid var(--sw-line);padding:22px 0 10px} #swend .sw-step h3{margin-top:0;font-size:24px} #swend .sw-footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap} #swend .sw-footer-links button{background:transparent;border:0;padding:10px 0;text-decoration:underline}
+    #swend .sw-step p{font-size:14px}
+    #swend .sw-note{margin:18px 7% 35px;padding:30px;background:#eee2d0;border-radius:12px;display:grid;grid-template-columns:1fr 1.45fr;gap:25px;align-items:start}
+    #swend .sw-note p:last-child{margin:0}
+    #swend .sw-note h2{font-size:25px}
+    #swend .sw-ending{margin:10px 7% 35px;border-top:1px solid var(--sw-line);padding:25px 0 0;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+    #swend .sw-ending p{margin:0}
+    #swend .sw-ending button{background:transparent;color:var(--sw-wine);border:0;text-decoration:underline;padding:10px 0}
+    #swend footer{padding:22px 7%;background:#f0e3d0;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:13px}
+    #swend [hidden]{display:none!important}
+    @media(max-width:620px){#swend .sw-hero{grid-template-columns:1fr;padding-top:35px}#swend .sw-invitation{max-width:300px;justify-self:center;width:100%;transform:rotate(2deg)}#swend .sw-grid,#swend .sw-note{grid-template-columns:1fr}#swend .sw-grid{gap:12px}#swend nav{gap:12px}#swend header{gap:5px}#swend .sw-section{padding-top:22px}}
+    #swend .sw-logo-image{width:138px;height:auto;display:block;filter:brightness(1.2) contrast(1.3);mix-blend-mode:multiply}
+    #swend nav .sw-app{background:var(--sw-wine);color:var(--sw-paper);border-radius:24px;padding:10px 16px}
+    #swend .sw-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+    #swend .sw-discover{background:transparent;border:0;text-decoration:underline;padding:10px 0;font-size:13px}
+    #swend .sw-hand{font-family:'Segoe Print','Bradley Hand',cursive;font-style:italic;color:var(--sw-wine);font-size:25px;transform:rotate(-7deg);display:block;margin:0 0 17px}
+    #swend .sw-invitation{transition:transform .25s ease,box-shadow .25s ease}
+    #swend .sw-invitation:hover{transform:rotate(0deg) translateY(-3px);box-shadow:0 3px 5px #39291f0d,3px 15px 24px #39291f20}
+    #swend .sw-underlined,#swend #sw-steps .sw-step:nth-child(2) h3{ text-decoration:underline; text-decoration-color:#bf8a73;text-decoration-thickness:2px;text-underline-offset:7px}
+    #swend .sw-name{margin-top:27px;padding-top:22px;border-top:1px solid var(--sw-line)}
+    #swend .sw-name strong{font-weight:500;color:var(--sw-wine)}
+    #swend .sw-finale{text-align:center;padding:34px 7% 45px}
+    #swend .sw-finale h2{font-size:36px}
+    @media(prefers-reduced-motion:reduce){#swend .sw-invitation{transition:none}#swend .sw-invitation:hover{transform:rotate(3deg)}}
+    #swend .sw-seal{width:68px;height:68px;background:#f4e4cb;border:1px solid var(--sw-line);border-radius:50%;overflow:hidden;isolation:isolate;clip-path:circle(50%)}
+    #swend .sw-seal-logo{display:block;width:60px;height:auto;mix-blend-mode:darken;border-radius:50%}
+
+    #swend .sw-restaurant-message{font:400 27px/1.35 Georgia,serif;color:var(--sw-wine)}
+    #swend .sw-attention-title{font-size:32px}
+    #swend .sw-attention-copy{text-align:left}
+    #swend .sw-ending button.sw-link{background:var(--sw-wine);color:var(--sw-paper);padding:11px 20px;text-decoration:none}
+    #swend .sw-contact-section{padding:65px 7% 70px;max-width:780px;margin:0 auto}
+    #swend .sw-contact-address{display:inline-block;font:400 clamp(22px,4vw,35px)/1.4 Georgia,serif;color:var(--sw-wine);text-underline-offset:7px;margin:14px 0;overflow-wrap:anywhere;max-width:100%}
+    #swend .sw-copy{border:0;background:transparent;text-decoration:underline;text-underline-offset:4px;padding:11px 0;color:var(--sw-wine)}
+    #swend .sw-copy-status{min-height:26px;margin-top:18px;font-size:13px}
+
+    #swend .sw-keep-together{white-space:nowrap}
+  
+  #swend .sw-flip{display:block;width:100%;min-width:0;padding:0;border:0;background:transparent;perspective:1200px;text-align:center;transform:rotate(3deg);color:var(--sw-ink);-webkit-tap-highlight-color:transparent}
+  #swend .sw-flip-inner{display:grid;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  #swend .sw-flip[aria-pressed="true"] .sw-flip-inner{transform:rotateY(180deg)}
+  #swend .sw-face{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:30px 24px;min-height:365px;border:1px solid var(--sw-line);border-radius:5px;background:var(--sw-paper);box-shadow:0 2px 3px #39291f0d,2px 9px 18px #39291f17;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  #swend .sw-face .sw-eyebrow{margin:0}
+  #swend .sw-face .sw-seal{margin:0}
+  #swend .sw-card-lines{font:400 21px/1.5 Georgia,serif;letter-spacing:-.35px} #swend .sw-card-lines>span{display:block;white-space:nowrap} #swend .sw-definition-hint{color:var(--sw-wine);font-size:14px} #swend .sw-definition-hint>span{display:block;color:#715448;font-size:12px;margin-top:5px}
+  #swend .sw-back{transform:rotateY(180deg);text-align:left;align-items:stretch}
+  #swend .sw-definition-title{font:400 39px/1.1 Georgia,serif;color:var(--sw-wine)}
+  #swend .sw-definition-title em{font-size:17px;letter-spacing:0;margin-left:8px;color:var(--sw-ink)}
+  #swend .sw-definition{font:400 17px/1.6 Georgia,serif;text-align:justify;hyphens:auto} #swend .sw-card-wordmark{width:150px;max-width:100%;margin:0 auto}
+  #swend .sw-signature{font:italic 20px/1.3 Georgia,serif;color:var(--sw-wine);border-top:1px solid var(--sw-line);padding-top:18px}
+  #swend .sw-flip-hint{display:block;font:400 12px/1.4 Arial,sans-serif;color:#715448}
+  #swend .sw-back .sw-flip-hint{margin-top:0;border-top:1px solid var(--sw-line);padding-top:18px}
+  @media(max-width:620px){#swend .sw-flip{max-width:330px;justify-self:center;margin:10px 0}.sw-flip .sw-face{padding:26px 20px}}
+  @media(prefers-reduced-motion:reduce){#swend .sw-flip-inner{transition:none}}
+    #swend .sw-flip{transition:transform .2s ease-out;transform:perspective(1200px) rotate(3deg);touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+    #swend .sw-flip.sw-hovering{transform:perspective(1200px) translateY(-6px) rotate(1deg) rotateX(var(--sw-tilt-x,0deg)) rotateY(var(--sw-tilt-y,0deg))}
+    #swend .sw-flip-inner{transition:transform .72s cubic-bezier(.22,.7,.3,1)}
+    #swend .sw-face{transition:box-shadow .25s ease}
+    #swend .sw-flip.sw-hovering .sw-face{box-shadow:0 3px 5px #39291f0d,3px 15px 24px #39291f20}
+    #swend .sw-front .sw-seal{width:78px;height:78px;transition:transform .3s ease}
+    #swend .sw-front .sw-seal-logo{width:69px}
+    #swend .sw-flip.sw-hovering .sw-front .sw-seal{transform:rotate(-5deg)}
+    #swend .sw-return{display:block;margin-top:12px;font-size:11px}
+    @media(prefers-reduced-motion:reduce){#swend .sw-flip,#swend .sw-flip-inner,#swend .sw-face,#swend .sw-front .sw-seal,#swend .sw-definition-title,#swend .sw-definition{transition:none!important;transition-delay:0s!important}#swend .sw-definition-title,#swend .sw-definition{transform:none}}
+  
+    #swend .sw-face{position:relative;background:transparent;border:0;box-shadow:none!important;transition:filter .3s ease;filter:drop-shadow(0 2px 2px #39291f10) drop-shadow(2px 9px 13px #39291f1b);isolation:isolate}
+    #swend .sw-face::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--sw-paper);border:1px solid var(--sw-line);border-radius:5px;clip-path:polygon(0 0,100% 0,100% calc(100% - 58px),calc(100% - 58px) 100%,0 100%)}
+    #swend .sw-fold{position:absolute;right:0;bottom:0;width:60px;height:60px;pointer-events:none;transform-origin:top left;transition:transform .35s ease;filter:drop-shadow(-1px -1px 1px #39291f16) drop-shadow(-3px -4px 4px #39291f12)}
+    #swend .sw-fold svg{display:block;width:100%;height:100%;overflow:visible}
+    #swend .sw-flip.sw-hovering .sw-fold{transform:none}
+    #swend .sw-flip.sw-hovering .sw-face{filter:drop-shadow(0 3px 4px #39291f0d) drop-shadow(3px 15px 20px #39291f23)}
+    #swend .sw-definition-hint{margin-top:4px}
+    @media(prefers-reduced-motion:reduce){#swend .sw-fold{transition:none}#swend .sw-flip.sw-hovering .sw-fold{transform:none}}
+  
+    #swend .sw-back::before{clip-path:polygon(0 0,100% 0,100% 100%,58px 100%,0 calc(100% - 58px))}
+    #swend .sw-back .sw-fold{display:none}
+    #swend .sw-back .sw-fold svg{transform:scaleX(-1)}
+  
+    #swend .sw-app-preview{padding:45px 7% 55px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:55px;align-items:center}
+    #swend .sw-app-preview-copy{max-width:390px}
+    #swend .sw-app-preview h2{font-size:35px;max-width:360px}
+    #swend .sw-app-annotation{margin-top:32px;transform:rotate(-4deg);transform-origin:left center;font-size:24px}
+    #swend .sw-phone-figure{margin:0;justify-self:center;width:100%;max-width:210px;transform:rotate(3deg)}
+    #swend .sw-phone-frame{padding:7px;background:#4d3b33;border:1px solid #675147;border-radius:31px;box-shadow:0 4px 8px #39291f12,0 20px 35px #39291f1c;overflow:hidden}
+    #swend .sw-app-screenshot{display:block;width:100%;height:auto;border-radius:24px}
+    #swend .sw-phone-figure figcaption{text-align:center;font-size:12px;color:#715448;margin-top:16px}
+    #swend .sw-restaurant-intro{padding:58px 7% 30px}
+    #swend .sw-restaurant-intro h1{max-width:780px}
+    #swend .sw-restaurant-intro>.sw-lead{max-width:650px;font-size:18px;margin-top:26px}
+    #swend .sw-partner-context{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;border-top:1px solid var(--sw-line);padding-top:27px;margin-top:30px;align-items:start}
+    #swend .sw-partner-context>p{max-width:440px}
+    #swend .sw-personal-touch{padding:48px 7% 65px;display:grid;grid-template-columns:1.35fr 1fr;gap:55px;align-items:center}
+    #swend .sw-personal-touch>div{max-width:420px}
+    @media(max-width:760px){#swend .sw-hero,#swend .sw-personal-touch{grid-template-columns:1fr}#swend .sw-flip{max-width:330px;justify-self:center;margin:12px 0}#swend .sw-grid{grid-template-columns:1fr;gap:12px}#swend .sw-app-preview{gap:25px}#swend .sw-app-preview h2{font-size:29px}}
+    @media(max-width:620px){#swend .sw-app-preview,#swend .sw-partner-context{grid-template-columns:1fr}#swend .sw-app-preview{padding-top:24px;gap:30px}#swend .sw-restaurant-intro{padding-top:35px}#swend .sw-personal-touch{gap:25px;padding-top:30px}#swend .sw-partner-context{gap:8px}#swend .sw-phone-figure{max-width:200px}}
+  
