@@ -110,6 +110,7 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-flip.sw-hovering .sw-fold{transform:none}
     #swend .sw-flip.sw-hovering .sw-face{filter:drop-shadow(0 3px 4px #39291f0d) drop-shadow(3px 15px 20px #39291f23)}
     #swend .sw-definition-hint{margin-top:4px}
+    #swend .sw-hint-cue{display:block;margin-top:5px;font:400 12px/1.4 Arial,sans-serif;color:#715448;letter-spacing:.02em}
     @media(prefers-reduced-motion:reduce){#swend .sw-fold{transition:none}#swend .sw-flip.sw-hovering .sw-fold{transform:none}}
   
     #swend .sw-back::before{clip-path:polygon(0 0,100% 0,100% 100%,58px 100%,0 calc(100% - 58px))}
