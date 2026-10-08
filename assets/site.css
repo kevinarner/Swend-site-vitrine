@@ -110,7 +110,9 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-flip.sw-hovering .sw-fold{transform:none}
     #swend .sw-flip.sw-hovering .sw-face{filter:drop-shadow(0 3px 4px #39291f0d) drop-shadow(3px 15px 20px #39291f23)}
     #swend .sw-definition-hint{margin-top:4px}
-    #swend .sw-hint-cue{display:block;margin-top:5px;font:400 12px/1.4 Arial,sans-serif;color:#715448;letter-spacing:.02em}
+    /* Consigne logistique, à part des textes de la carte : centrée en bas de chaque face. */
+    #swend .sw-face{padding-bottom:54px}
+    #swend .sw-hint-cue{position:absolute;left:0;right:0;bottom:18px;text-align:center;font:400 11.5px/1.4 Arial,sans-serif;color:#8a7064;letter-spacing:.03em}
     @media(prefers-reduced-motion:reduce){#swend .sw-fold{transition:none}#swend .sw-flip.sw-hovering .sw-fold{transform:none}}
   
     #swend .sw-back::before{clip-path:polygon(0 0,100% 0,100% 100%,58px 100%,0 calc(100% - 58px))}
