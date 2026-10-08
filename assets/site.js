@@ -106,11 +106,19 @@
       window.addEventListener('popstate',()=>{showPage(pageFromHash());root.scrollIntoView({block:'start',behavior:'auto'});});
       if(pageFromHash()!=='concept')showPage(pageFromHash());
 
+      // Adresse de contact reconstituée à l'affichage : elle n'apparaît pas
+      // en clair dans le code de la page (moins de collecte par les robots).
+      const email=['contact','swend.fr'].join('@');
+      root.querySelectorAll('[data-email]').forEach(lien=>{
+        lien.href='mailto:'+email;
+        if(lien.dataset.email==='texte')lien.textContent=email;
+      });
+
       const copyButton=root.querySelector('.sw-copy');
       const copyStatus=root.querySelector('.sw-copy-status');
       copyButton.addEventListener('click',async()=>{
         try{
-          await navigator.clipboard.writeText('contact@swend.fr');
+          await navigator.clipboard.writeText(email);
           copyStatus.textContent='Adresse copiée !';
         }catch(error){
           const range=document.createRange();
