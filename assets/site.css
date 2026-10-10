@@ -166,3 +166,31 @@ body{margin:0;background:#fbf3e5}
   #swend #sw-steps .sw-step,#swend [data-content="restaurants"] .sw-step{flex:0 0 78%;scroll-snap-align:start;scroll-snap-stop:always;border:1px solid var(--sw-line);border-radius:5px;background:var(--sw-paper);box-shadow:0 2px 3px #39291f0d,2px 9px 18px #39291f17;padding:20px 22px 14px}
   #swend #sw-steps .sw-step::before,#swend [data-content="restaurants"] .sw-step::before{counter-increment:sw-etape;content:counter(sw-etape) " / 3";display:block;font-size:11px;letter-spacing:2px;color:var(--sw-wine);margin-bottom:14px}
 }
+
+/* Haut de la page restaurants : texte et chevalet « Réservé ». */
+#swend .sw-restaurant-hero{display:grid;grid-template-columns:1.35fr 1fr;gap:35px;align-items:center}
+#swend .sw-restaurant-hero .sw-lead{max-width:520px;margin-top:22px}
+#swend .sw-restaurant-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+#swend .sw-restaurant-cta p{margin:0;font-size:13px;color:#715448;max-width:250px}
+#swend .sw-restaurant-intro .sw-benefits{margin-top:48px;border-top:1px solid var(--sw-line);padding-top:30px;max-width:none}
+#swend .sw-tent{position:relative;justify-self:center;width:100%;max-width:300px;padding-bottom:18px}
+#swend .sw-tent-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;padding:40px 26px 34px;background:var(--sw-paper);border:1px solid var(--sw-line);border-radius:4px;box-shadow:0 2px 3px #39291f0d,2px 12px 22px #39291f1c;transform:rotate(-3deg);text-align:center}
+#swend .sw-tent-card::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:9px;border-radius:4px 4px 0 0;background:linear-gradient(#e7d6bd,#f6ecdc);border-bottom:1px solid #e3d2b8}
+#swend .sw-tent-reserve{font:400 30px/1 Georgia,serif;letter-spacing:.22em;text-transform:uppercase;color:var(--sw-wine);padding-left:.22em}
+#swend .sw-tent-logo{width:110px;height:auto;padding-top:14px;border-top:1px solid var(--sw-line)}
+#swend .sw-tent-lines{font:400 18px/1.55 Georgia,serif;color:var(--sw-ink)}
+#swend .sw-tent-lines>span{display:block}
+#swend .sw-tent-shadow{position:absolute;left:8%;right:8%;bottom:4px;height:22px;background:radial-gradient(ellipse at center,#39291f24,#39291f00 70%);z-index:-1}
+#swend .sw-tent-note{position:absolute;right:-22px;bottom:-26px;font-size:21px;margin:0}
+@media(max-width:760px){
+  #swend .sw-restaurant-hero{grid-template-columns:1fr;gap:42px}
+  #swend .sw-tent{max-width:260px}
+  #swend .sw-tent-note{right:-6px}
+}
+@media(max-width:620px){
+  #swend .sw-restaurant-intro .sw-benefits{margin-top:56px;padding-top:24px}
+  #swend .sw-tent-reserve{font-size:26px}
+}
+#swend .sw-tent-card{padding-bottom:28px}
+#swend .sw-tent-seal{width:66px;height:66px;margin-top:2px;transform:rotate(-6deg)}
+#swend .sw-tent-seal .sw-seal-logo{width:58px}
