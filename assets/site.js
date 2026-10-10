@@ -89,7 +89,7 @@
       document.addEventListener('visibilitychange',()=>{if(document.hidden)stopHold();});
       draw();
       });
-      const pages=['concept','restaurants','contact'];
+      const pages=['concept','restaurants','contact','mentions-legales'];
       function showPage(page){
         if(page==='restaurants')root.querySelector('.sw-restaurant-flip').dispatchEvent(new Event('sw-reset'));
         root.querySelectorAll('[data-content]').forEach(panel=>{panel.hidden=panel.dataset.content!==page;});

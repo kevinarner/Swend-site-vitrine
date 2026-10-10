@@ -76,6 +76,7 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-attention-copy{text-align:left}
     #swend .sw-ending button.sw-link{background:var(--sw-wine);color:var(--sw-paper);padding:11px 20px;text-decoration:none}
     #swend .sw-contact-section{padding:65px 7% 70px;max-width:780px;margin:0 auto}
+    #swend .sw-legal h2{font-size:21px;margin:30px 0 8px} #swend .sw-legal p{margin:0 0 10px;font-size:15px} #swend .sw-legal a{text-decoration:underline}
     #swend .sw-contact-address{display:inline-block;font:400 clamp(22px,4vw,35px)/1.4 Georgia,serif;color:var(--sw-wine);text-underline-offset:7px;margin:14px 0;overflow-wrap:anywhere;max-width:100%}
     #swend .sw-copy{border:0;background:transparent;text-decoration:underline;text-underline-offset:4px;padding:11px 0;color:var(--sw-wine)}
     #swend .sw-copy-status{min-height:26px;margin-top:18px;font-size:13px}
