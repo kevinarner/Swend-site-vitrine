@@ -23,8 +23,23 @@
 <header>
     <a class="sw-logo-link" href="/"><img class="sw-logo-image" src="assets/swend-logo-138.png" srcset="assets/swend-logo-138.png 1x, assets/swend-logo-138@2x.png 2x, assets/swend-logo-138@3x.png 3x" alt="Swend"></a>
     <nav aria-label="Navigation principale">
-      <button type="button" class="cursor-interaction" data-page="concept" aria-current="page">Découvrir Swend</button>
-      <button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button>
+      <div class="sw-menu">
+        <button type="button" class="cursor-interaction" data-page="concept" data-menu aria-current="page" aria-expanded="false">Découvrir Swend</button>
+        <div class="sw-submenu">
+          <button type="button" data-goto="concept" data-section="sw-steps">Comment ça marche</button>
+          <button type="button" data-goto="concept" data-section="sw-origine">À l’origine de Swend</button>
+          <button type="button" data-goto="concept" data-section="sw-faq-concept">Questions fréquentes</button>
+        </div>
+      </div>
+      <div class="sw-menu">
+        <button type="button" class="cursor-interaction" data-page="restaurants" data-menu aria-expanded="false">Pour les restaurants</button>
+        <div class="sw-submenu">
+          <button type="button" data-goto="restaurants" data-section="sw-avantages">Ce que Swend vous apporte</button>
+          <button type="button" data-goto="restaurants" data-section="sw-etapes-resto">Comment ça se passe</button>
+          <button type="button" data-goto="restaurants" data-section="sw-remuneration">Rémunération et attention</button>
+          <button type="button" data-goto="restaurants" data-section="sw-faq-resto">Questions fréquentes</button>
+        </div>
+      </div>
       <button type="button" class="cursor-interaction" data-page="contact">Contact</button>
       <a class="sw-launch-badge" data-email data-email-objet="Prévenez-moi du lancement de Swend" data-email-corps="Hello Eliot et Kevin,&#10;&#10;J’aimerais être prévenu(e) du lancement de Swend. J’ai déjà quelqu’un en tête pour mon premier Swend !&#10;&#10;À bientôt,">Être prévenu du lancement</a>
     </nav>
@@ -36,7 +51,7 @@
           <p class="sw-eyebrow">Le plaisir de se retrouver. L’engagement d’y être.</p>
           <h1>Un restaurant.<br>Une date.<br>Un engagement.</h1>
           <p class="sw-lead">Pour que l’envie de se retrouver entre amis devienne un vrai rendez-vous, même au milieu d’agendas bien remplis.</p>
-          <div class="sw-actions"><p class="sw-soon">L’app Swend ouvre bientôt.</p><button type="button" class="sw-discover cursor-interaction" data-scroll="sw-steps">Découvrir le principe ↓</button></div>
+          <div class="sw-actions"><p class="sw-soon">L’app Swend ouvre bientôt.</p></div>
         </div>
         <button type="button" class="sw-flip cursor-interaction" aria-label="Retourner la carte pour découvrir la définition de Swend" aria-pressed="false">
   <span class="sw-flip-inner">
@@ -110,7 +125,7 @@
         </figure>
       </section>
 
-<section class="sw-story" aria-labelledby="sw-story-title">
+<section class="sw-story" id="sw-origine" aria-labelledby="sw-story-title">
         <div class="sw-story-inner">
           <p class="sw-eyebrow">À l’origine de Swend</p>
           <h2 id="sw-story-title">« On se fait un resto bientôt ? »</h2>
@@ -120,7 +135,7 @@
           <p class="sw-purpose">Swend est né pour redonner du poids à nos « on se voit », faire du rendez-vous un engagement auquel on tient, et de l’attente une partie du plaisir.</p>
         </div>
       </section>
-<section class="sw-faq" aria-labelledby="sw-faq-title">
+<section class="sw-faq" id="sw-faq-concept" aria-labelledby="sw-faq-title">
         <p class="sw-eyebrow">Questions fréquentes</p>
         <h2 id="sw-faq-title">Quelques précisions.</h2>
         <div class="sw-faq-list">
@@ -156,13 +171,13 @@
             <span class="sw-hand sw-tent-note">Le rendez-vous est pris.</span>
           </div>
         </div>
-        <ul class="sw-benefits">
+        <ul class="sw-benefits" id="sw-avantages">
           <li><h3>Des réservations prévues à l’avance.</h3><p>Les Swends sont fixés au moins quinze jours avant le rendez-vous.</p></li>
           <li><h3>Moins de tables vides.</h3><p>Si l’un des deux ne peut plus venir, une personne de confiance peut prendre sa place : le rendez-vous est maintenu.</p></li>
           <li><h3>Les services que vous choisissez.</h3><p>Vous décidez avec nous des jours et des créneaux ouverts à Swend, au déjeuner comme au dîner.</p></li>
         </ul>
       </section>
-      <section class="sw-section sw-band-paper"><p class="sw-eyebrow">Construisons les premiers Swends ensemble</p><h2>L’expérience fait partie de l’histoire.</h2><div class="sw-grid">
+      <section class="sw-section sw-band-paper" id="sw-etapes-resto"><p class="sw-eyebrow">Construisons les premiers Swends ensemble</p><h2>L’expérience fait partie de l’histoire.</h2><div class="sw-grid">
         <article class="sw-step"><h3>Fixer le cadre.</h3><p>Jours, créneaux et conditions : nous définissons avec vous un fonctionnement adapté à votre organisation.</p></article>
         <article class="sw-step"><h3>Accueillir les rendez-vous.</h3><p>Des tables de deux, sur les jours et créneaux convenus. Swend réserve en son nom, vérifie chaque réservation et vous prévient au plus tôt en cas d’annulation.</p></article>
         <article class="sw-step"><h3>Tester et faire le bilan.</h3><p>Commençons par quelques réservations. Vos retours et ceux des convives nous aideront à ajuster l’expérience ensemble.</p></article>
@@ -187,13 +202,14 @@
     <p>Des lieux chaleureux, plutôt intimistes, où l’on se sent bien accueilli et où le service est attentionné. Des tables où l’on prend plaisir à se retrouver, à prendre son temps et à se parler.</p>
   </div>
 </section>
-      <section class="sw-personal-touch" aria-labelledby="sw-personal-touch-title">
-        <div>
-          <p class="sw-eyebrow">À imaginer ensemble</p>
-          <h2 id="sw-personal-touch-title">Une attention qui vous ressemble.</h2>
-          <p>Votre accueil donne le ton. Si vous le souhaitez, une petite attention peut rendre ce moment encore plus singulier.</p>
-          <p>Imaginons un geste adapté à votre maison et à votre façon de recevoir, pour que chaque Swend y trouve sa place.</p>
-        </div>
+      <section class="sw-remuneration" id="sw-remuneration" aria-labelledby="sw-remuneration-title">
+        <div class="sw-note"><div><p class="sw-eyebrow">Un modèle à construire ensemble</p><h2 id="sw-remuneration-title">Comment Swend est-il rémunéré&nbsp;?</h2></div><div><p><strong>Une commission</strong> : par couvert servi ou en pourcentage de l’addition, à convenir avec&nbsp;vous.</p><p><strong>Sans engagement</strong> : vous arrêtez quand vous voulez.</p></div></div>
+        <div class="sw-attention-row">
+          <div class="sw-attention-text">
+            <p class="sw-eyebrow">En option</p>
+            <h3>Et une attention, si vous le souhaitez.</h3>
+            <p>Un petit geste offert aux convives, à imaginer ensemble, pour que chaque Swend trouve sa place chez vous.</p>
+          </div>
         <button type="button" class="sw-flip sw-restaurant-flip cursor-interaction" aria-label="Retourner la carte pour découvrir des idées d’attentions" aria-pressed="false" data-front-label="Revenir à votre touche personnelle" data-back-label="Découvrir des idées d’attentions">
   <span class="sw-flip-inner">
     <span class="sw-face sw-front">
@@ -237,10 +253,9 @@
     </span>
   </span>
 </button>
+        </div>
       </section>
-
-      <section class="sw-note"><div><p class="sw-eyebrow">Un modèle à construire ensemble</p><h2>Comment Swend est-il rémunéré&nbsp;?</h2></div><div><p><strong>Une commission</strong> : par couvert servi ou en pourcentage de l’addition, à convenir avec&nbsp;vous.</p><p><strong>Sans engagement</strong> : vous arrêtez quand vous voulez.</p></div></section>
-<section class="sw-faq sw-band-paper" aria-labelledby="sw-faq-resto-title">
+<section class="sw-faq sw-band-paper" id="sw-faq-resto" aria-labelledby="sw-faq-resto-title">
         <p class="sw-eyebrow">Questions fréquentes</p>
         <h2 id="sw-faq-resto-title">Quelques précisions.</h2>
         <div class="sw-faq-list">

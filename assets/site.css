@@ -263,7 +263,6 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-contact-resto a{color:var(--sw-wine);text-decoration:underline;text-underline-offset:3px}
 #swend .sw-nowrap{white-space:nowrap}
 /* Carte « attention » de la page restaurants : format plus compact. */
-#swend .sw-personal-touch .sw-flip{max-width:280px}
 #swend .sw-restaurant-flip .sw-face{min-height:300px;gap:14px;padding:24px 20px 48px}
 #swend .sw-restaurant-message{font-size:22px;line-height:1.3}
 #swend .sw-restaurant-flip .sw-front .sw-seal{width:62px;height:62px}
@@ -281,17 +280,65 @@ body{margin:0;background:#fbf3e5}
 #swend.sw-anim .sw-settle{opacity:0;translate:0 -28px;transition:opacity .6s ease,translate .8s cubic-bezier(.25,1.2,.4,1)}
 #swend.sw-anim .sw-settle.sw-visible{opacity:1;translate:0 0}
 
-/* En-tête qui reste en haut de l'écran. overflow:clip (au lieu de hidden)
-   laisse fonctionner position:sticky ; les navigateurs anciens gardent hidden. */
-#swend{overflow:clip}
-#swend header{position:sticky;top:0;z-index:20;background:var(--sw-bg);transition:padding .25s ease,box-shadow .25s ease}
-#swend header .sw-logo-link{transition:transform .25s ease,margin .25s ease;transform-origin:left center}
-#swend header.sw-scrolled{padding-top:10px;padding-bottom:10px;box-shadow:0 2px 14px #39291f14}
+/* En-tête fixé en haut de l'écran. Il est en position fixe (une marge en
+   haut de #swend lui réserve sa place) : quand il rétrécit au défilement,
+   le contenu ne bouge pas. Hauteur et position animées en douceur. */
+#swend{padding-top:96px}
+#swend header{position:fixed;top:0;left:0;right:0;z-index:20;box-sizing:border-box;height:96px;padding-top:0;padding-bottom:0;flex-wrap:nowrap;background:var(--sw-bg);transition:height .4s cubic-bezier(.3,.7,.2,1),box-shadow .3s ease}
+#swend header .sw-logo-link{transition:transform .4s cubic-bezier(.3,.7,.2,1),margin .4s cubic-bezier(.3,.7,.2,1);transform-origin:left center}
+#swend header.sw-scrolled{height:70px;box-shadow:0 2px 14px #39291f14}
 #swend header.sw-scrolled .sw-logo-link{transform:scale(.8);margin-right:-28px}
+#swend :is(#sw-steps,#sw-origine,#sw-faq-concept,#sw-avantages,#sw-etapes-resto,#sw-remuneration,#sw-faq-resto){scroll-margin-top:84px}
+
+/* Téléphone : logo en haut, pages en dessous ; au défilement, les pages
+   glissent à côté du logo pendant que l'en-tête se resserre. */
 @media(max-width:620px){
-  #swend header.sw-scrolled{flex-wrap:nowrap;padding:8px 4%}
-  #swend header.sw-scrolled .sw-logo-link{transform:scale(.6);margin-right:-55px}
-  #swend header.sw-scrolled nav{gap:10px;flex-wrap:nowrap}
-  #swend header.sw-scrolled nav button{font-size:12px;white-space:nowrap}
+  #swend{padding-top:104px}
+  #swend header{display:block;height:104px;padding:0}
+  #swend header .sw-logo-link{position:absolute;left:5%;top:14px;transform-origin:left top;margin:0}
+  #swend header nav{position:absolute;left:5%;top:60px;flex-wrap:nowrap;gap:12px;transform-origin:left top}
+  #swend header.sw-scrolled{height:58px}
+  #swend header.sw-scrolled .sw-logo-link{transform:scale(.6);margin:0}
+  #swend header.sw-scrolled nav{transform:translate(95px,-48px) scale(.88)}
+  #swend :is(#sw-steps,#sw-origine,#sw-faq-concept,#sw-avantages,#sw-etapes-resto,#sw-remuneration,#sw-faq-resto){scroll-margin-top:70px}
 }
-@media(max-width:380px){#swend header.sw-scrolled nav{gap:7px}#swend header.sw-scrolled nav button{font-size:11.5px}}
+@media(max-width:380px){#swend header.sw-scrolled nav{transform:translate(90px,-49px) scale(.8)}}
+
+/* Menus des pages. */
+#swend .sw-menu{position:relative}
+#swend .sw-submenu{position:absolute;top:100%;left:-18px;z-index:30;min-width:230px;margin-top:6px;padding:8px 0;background:var(--sw-paper);border:1px solid var(--sw-line);border-radius:8px;box-shadow:0 8px 24px #39291f1f;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s ease,transform .2s ease,visibility 0s .2s}
+#swend .sw-submenu::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+#swend nav .sw-submenu button{display:block;width:100%;text-align:left;border:0;padding:9px 18px;font-size:13px;white-space:nowrap;color:var(--sw-ink);cursor:pointer}
+#swend nav .sw-submenu button:hover,#swend nav .sw-submenu button:focus-visible{background:var(--sw-bg);color:var(--sw-wine);outline:none}
+#swend .sw-menu.sw-open .sw-submenu{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
+@media(hover:hover){
+  #swend .sw-menu:hover .sw-submenu,#swend .sw-menu:focus-within .sw-submenu{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
+}
+@media(max-width:620px){
+  #swend .sw-menu{position:static}
+  #swend .sw-submenu{top:100%;left:4%;right:4%;min-width:0;margin-top:4px}
+}
+
+/* Page restaurants : rémunération, puis l'attention en option. */
+#swend .sw-remuneration{padding:30px 0 30px}
+#swend .sw-remuneration .sw-note{margin-top:0}
+#swend .sw-attention-row{margin:10px 7% 20px;display:grid;grid-template-columns:minmax(0,440px) 260px;justify-content:center;gap:70px;align-items:center}
+#swend .sw-attention-text{max-width:440px}
+#swend .sw-attention-text h3{font-size:22px;margin:0 0 8px}
+#swend .sw-attention-text p:last-child{margin:0}
+#swend .sw-attention-row .sw-flip{max-width:260px;justify-self:center}
+@media(max-width:760px){#swend .sw-attention-row{grid-template-columns:1fr;gap:26px}}
+#swend .sw-menu.sw-suppress .sw-submenu{opacity:0!important;visibility:hidden!important}
+/* Téléphone : les pages changent de place en fondu (elles ne passent jamais
+   sur le logo) : elles glissent doucement jusqu'à côté du logo, ou
+   reviennent sous lui quand on remonte. */
+@media(max-width:620px){
+  #swend header.sw-anim-nav nav{animation:sw-nav-retour .45s cubic-bezier(.3,.7,.2,1) both}
+  #swend header.sw-anim-nav.sw-scrolled nav{animation:sw-nav-cote .5s cubic-bezier(.3,.7,.2,1) both}
+}
+@keyframes sw-nav-cote{0%,25%{opacity:0;transform:translate(118px,-48px) scale(.88)}100%{opacity:1;transform:translate(95px,-48px) scale(.88)}}
+@keyframes sw-nav-retour{0%,25%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@media(max-width:380px){
+  @keyframes sw-nav-cote{0%,25%{opacity:0;transform:translate(112px,-49px) scale(.8)}100%{opacity:1;transform:translate(90px,-49px) scale(.8)}}
+}
+#swend nav button{-webkit-tap-highlight-color:transparent}

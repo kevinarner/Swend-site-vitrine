@@ -96,13 +96,57 @@
         root.querySelectorAll('nav [data-page]').forEach(item=>{if(item.dataset.page===page){item.setAttribute('aria-current','page');}else{item.removeAttribute('aria-current');}});
       }
       function pageFromHash(){const page=location.hash.slice(1);return pages.includes(page)?page:'concept';}
-      root.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>{
-        const page=button.dataset.page;
+      function allerA(page){
         showPage(page);
         const url=page==='concept'?location.pathname+location.search:'#'+page;
         if(pageFromHash()!==page)history.pushState(null,'',url);
+      }
+      // Menus des pages : au survol sur ordinateur, au toucher sur téléphone
+      // (le mot de la page ouvre alors le menu au lieu de changer de page).
+      const sansSurvol=()=>window.matchMedia('(hover: none)').matches;
+      function fermerMenus(){
+        root.querySelectorAll('.sw-menu.sw-open').forEach(menu=>{
+          menu.classList.remove('sw-open');
+          menu.querySelector('[data-menu]').setAttribute('aria-expanded','false');
+        });
+      }
+      root.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>{
+        if(button.hasAttribute('data-menu')&&sansSurvol()){
+          // Téléphone : toucher l'onglet ouvre la page et déplie son menu ;
+          // le toucher à nouveau replie le menu.
+          const menu=button.closest('.sw-menu');
+          const ouvert=menu.classList.contains('sw-open');
+          fermerMenus();
+          if(ouvert)return;
+          if(pageFromHash()!==button.dataset.page){allerA(button.dataset.page);root.scrollIntoView({block:'start',behavior:'auto'});}
+          menu.classList.add('sw-open');button.setAttribute('aria-expanded','true');
+          return;
+        }
+        fermerMenus();
+        allerA(button.dataset.page);
         root.scrollIntoView({block:'start',behavior:'auto'});
       }));
+      root.querySelectorAll('[data-goto]').forEach(lien=>lien.addEventListener('click',()=>{
+        fermerMenus();
+        // Sur ordinateur, le menu se referme même si la souris est encore dessus.
+        const menu=lien.closest('.sw-menu');
+        menu.classList.add('sw-suppress');
+        menu.addEventListener('mouseleave',()=>menu.classList.remove('sw-suppress'),{once:true});
+        lien.blur();
+        allerA(lien.dataset.goto);
+        const cible=lien.dataset.section&&root.querySelector('#'+lien.dataset.section);
+        requestAnimationFrame(()=>{
+          if(!cible){window.scrollTo({top:0,behavior:'smooth'});return;}
+          // Position finale de la section (sans son décalage d'apparition),
+          // sous l'en-tête fixe.
+          const style=getComputedStyle(cible);
+          const decalage=new DOMMatrix(style.transform==='none'?undefined:style.transform).m42;
+          const haut=cible.getBoundingClientRect().top+window.scrollY-decalage-parseFloat(style.scrollMarginTop||0);
+          window.scrollTo({top:haut,behavior:'smooth'});
+        });
+      }));
+      document.addEventListener('click',event=>{if(!event.target.closest('.sw-menu'))fermerMenus();});
+      document.addEventListener('keydown',event=>{if(event.key==='Escape'){fermerMenus();if(document.activeElement.closest&&document.activeElement.closest('.sw-submenu'))document.activeElement.blur();}});
       window.addEventListener('popstate',()=>{showPage(pageFromHash());root.scrollIntoView({block:'start',behavior:'auto'});});
       if(pageFromHash()!=='concept')showPage(pageFromHash());
 
@@ -138,11 +182,18 @@
           }
         });
       });
-      root.querySelector('[data-scroll]').addEventListener('click',()=>root.querySelector('#sw-steps').scrollIntoView({block:'start',behavior:'auto'}));
 
       // En-tête fixé en haut : plus compact et ombré dès qu'on a défilé.
       const entete=root.querySelector('header');
-      const suivreDefilement=()=>entete.classList.toggle('sw-scrolled',window.scrollY>10);
+      let defile=window.scrollY>10;
+      entete.classList.toggle('sw-scrolled',defile);
+      const suivreDefilement=()=>{
+        const etat=window.scrollY>10;
+        if(etat===defile)return;
+        defile=etat;
+        entete.classList.add('sw-anim-nav'); // anime le changement, pas l'arrivée sur la page
+        entete.classList.toggle('sw-scrolled',etat);
+      };
       window.addEventListener('scroll',suivreDefilement,{passive:true});
       suivreDefilement();
 
