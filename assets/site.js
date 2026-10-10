@@ -106,12 +106,14 @@
       window.addEventListener('popstate',()=>{showPage(pageFromHash());root.scrollIntoView({block:'start',behavior:'auto'});});
       if(pageFromHash()!=='concept')showPage(pageFromHash());
 
-      // Adresse de contact reconstituée à l'affichage : elle n'apparaît pas
-      // en clair dans le code de la page (moins de collecte par les robots).
+      // Adresses reconstituées à l'affichage : elles n'apparaissent pas en
+      // clair dans le code de la page (moins de collecte par les robots).
+      // contact@ par défaut, une autre boîte avec data-email-boite.
       const email=['contact','swend.fr'].join('@');
       root.querySelectorAll('[data-email]').forEach(lien=>{
-        lien.href='mailto:'+email+(lien.dataset.emailObjet?'?subject='+encodeURIComponent(lien.dataset.emailObjet):'');
-        if(lien.dataset.email==='texte')lien.textContent=email;
+        const adresse=lien.dataset.emailBoite?[lien.dataset.emailBoite,'swend.fr'].join('@'):email;
+        lien.href='mailto:'+adresse+(lien.dataset.emailObjet?'?subject='+encodeURIComponent(lien.dataset.emailObjet):'');
+        if(lien.dataset.email==='texte')lien.textContent=adresse;
       });
 
       const copyButton=root.querySelector('.sw-copy');
