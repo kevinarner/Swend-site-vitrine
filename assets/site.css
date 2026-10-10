@@ -259,3 +259,6 @@ body{margin:0;background:#fbf3e5}
 @media(max-width:620px){#swend .sw-faq-page{padding:34px 5% 44px}#swend .sw-faq-page h2{font-size:20px;margin-top:30px}}
 @media(max-width:620px){#swend .sw-footer-links{gap:0 18px}}
 #swend .sw-band-paper+.sw-ending{border-top:0;margin-top:30px;padding-top:0}
+#swend .sw-contact-resto{margin:6px 0 0;font-size:14px;color:#715448}
+#swend .sw-contact-resto a{color:var(--sw-wine);text-decoration:underline;text-underline-offset:3px}
+#swend .sw-nowrap{white-space:nowrap}
