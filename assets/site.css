@@ -262,3 +262,12 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-contact-resto{margin:6px 0 0;font-size:14px;color:#715448}
 #swend .sw-contact-resto a{color:var(--sw-wine);text-decoration:underline;text-underline-offset:3px}
 #swend .sw-nowrap{white-space:nowrap}
+/* Carte « attention » de la page restaurants : format plus compact. */
+#swend .sw-personal-touch .sw-flip{max-width:280px}
+#swend .sw-restaurant-flip .sw-face{min-height:300px;gap:14px;padding:24px 20px 48px}
+#swend .sw-restaurant-message{font-size:22px;line-height:1.3}
+#swend .sw-restaurant-flip .sw-front .sw-seal{width:62px;height:62px}
+#swend .sw-restaurant-flip .sw-front .sw-seal-logo{width:55px}
+#swend .sw-restaurant-flip .sw-attention-title{font-size:26px}
+#swend .sw-restaurant-flip .sw-attention-copy{font-size:15px;line-height:1.55;text-align:left;hyphens:manual}
+#swend .sw-restaurant-flip .sw-back .sw-flip-hint{padding-top:12px}
