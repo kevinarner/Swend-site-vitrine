@@ -194,3 +194,4 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-tent-card{padding-bottom:28px}
 #swend .sw-tent-seal{width:66px;height:66px;margin-top:2px;transform:rotate(-6deg)}
 #swend .sw-tent-seal .sw-seal-logo{width:58px}
+#swend .sw-note strong{font-weight:600;color:var(--sw-wine)}
