@@ -11,4 +11,5 @@ Pas de build : les fichiers sont servis tels quels.
 - `assets/swend-logo.png`, `assets/swend-mains.png`, `assets/application-creation.jpg` : images originales.
 
 Prévisualisation locale : `python3 -m http.server` à la racine, puis http://localhost:8000.
-- Avant le lancement : aucun lien vers l’application (`kevinarner.github.io/le_pacte`) ; badge non cliquable « Lancement prochain » dans l’en-tête et phrases d’annonce (`sw-soon`). L’application reste accessible à son adresse pour les fondateurs et les testeurs.
+- Avant le lancement : aucun lien vers l’application (`kevinarner.github.io/le_pacte`) ; lien « Être prévenu du lancement » (e-mail prérempli vers contact@, aucune donnée collectée par le site) dans l’en-tête et en fin de page, et phrases d’annonce (`sw-soon`). L’application reste accessible à son adresse pour les fondateurs et les testeurs.
+- Écriture manuscrite : Segoe Print ou Bradley Hand quand l’appareil les a, sinon Caveat (licence OFL, `assets/fonts/`, hébergée sur le site : aucun appel à un service tiers).

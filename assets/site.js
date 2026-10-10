@@ -89,7 +89,7 @@
       document.addEventListener('visibilitychange',()=>{if(document.hidden)stopHold();});
       draw();
       });
-      const pages=['concept','restaurants','contact','mentions-legales'];
+      const pages=['concept','restaurants','contact','faq','mentions-legales'];
       function showPage(page){
         if(page==='restaurants')root.querySelector('.sw-restaurant-flip').dispatchEvent(new Event('sw-reset'));
         root.querySelectorAll('[data-content]').forEach(panel=>{panel.hidden=panel.dataset.content!==page;});
@@ -116,20 +116,24 @@
         if(lien.dataset.email==='texte')lien.textContent=adresse;
       });
 
-      const copyButton=root.querySelector('.sw-copy');
-      const copyStatus=root.querySelector('.sw-copy-status');
-      copyButton.addEventListener('click',async()=>{
-        try{
-          await navigator.clipboard.writeText(email);
-          copyStatus.textContent='Adresse copiée !';
-        }catch(error){
-          const range=document.createRange();
-          range.selectNodeContents(root.querySelector('.sw-contact-address'));
-          const selection=window.getSelection();
-          selection.removeAllRanges();
-          selection.addRange(range);
-          copyStatus.textContent='Copiez l’adresse sélectionnée, puis collez-la dans votre messagerie.';
-        }
+      // Boutons « Copier » : copient l'adresse de leur boîte (contact@ par défaut).
+      root.querySelectorAll('.sw-copy').forEach(copyButton=>{
+        const adresse=copyButton.dataset.emailBoite?[copyButton.dataset.emailBoite,'swend.fr'].join('@'):email;
+        const zone=copyButton.closest('p, section');
+        const copyStatus=zone.querySelector('.sw-copy-status');
+        copyButton.addEventListener('click',async()=>{
+          try{
+            await navigator.clipboard.writeText(adresse);
+            copyStatus.textContent='Adresse copiée !';
+          }catch(error){
+            const range=document.createRange();
+            range.selectNodeContents(zone.querySelector('[data-email="texte"]'));
+            const selection=window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            copyStatus.textContent='Copiez l’adresse sélectionnée, puis collez-la dans votre messagerie.';
+          }
+        });
       });
       root.querySelector('[data-scroll]').addEventListener('click',()=>root.querySelector('#sw-steps').scrollIntoView({block:'start',behavior:'auto'}));
     })();

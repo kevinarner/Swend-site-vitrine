@@ -59,7 +59,7 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-ending .sw-team{margin-top:6px;font-size:14px;color:#715448}
     #swend .sw-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
     #swend .sw-discover{background:transparent;border:0;text-decoration:underline;padding:10px 0;font-size:13px}
-    #swend .sw-hand{font-family:'Segoe Print','Bradley Hand',cursive;font-style:italic;color:var(--sw-wine);font-size:25px;transform:rotate(-7deg);display:block;margin:0 0 17px}
+    #swend .sw-hand{font-family:'Segoe Print','Bradley Hand','Caveat',cursive;font-style:italic;color:var(--sw-wine);font-size:25px;transform:rotate(-7deg);display:block;margin:0 0 17px}
     #swend .sw-invitation{transition:transform .25s ease,box-shadow .25s ease}
     #swend .sw-invitation:hover{transform:rotate(0deg) translateY(-3px);box-shadow:0 3px 5px #39291f0d,3px 15px 24px #39291f20}
     #swend .sw-underlined,#swend #sw-steps .sw-step:nth-child(2) h3{ text-decoration:underline; text-decoration-color:#bf8a73;text-decoration-thickness:2px;text-underline-offset:7px}
@@ -119,7 +119,7 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-definition-hint{margin-top:4px}
     /* Consigne logistique, à part des textes de la carte : centrée en bas de chaque face. */
     #swend .sw-face{padding-bottom:54px}
-    #swend .sw-hint-cue{position:absolute;left:0;right:0;bottom:18px;text-align:center;font:400 11.5px/1.4 Arial,sans-serif;color:#8a7064;letter-spacing:.03em}
+    #swend .sw-hint-cue{position:absolute;left:0;right:0;bottom:18px;text-align:center;font:400 11.5px/1.4 Arial,sans-serif;color:#715448;letter-spacing:.03em}
     @media(prefers-reduced-motion:reduce){#swend .sw-fold{transition:none}#swend .sw-flip.sw-hovering .sw-fold{transform:none}}
   
     #swend .sw-back::before{clip-path:polygon(0 0,100% 0,100% 100%,58px 100%,0 calc(100% - 58px))}
@@ -201,3 +201,61 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-restaurant-story{margin:0}
 @media(max-width:620px){#swend .sw-band-paper .sw-step,#swend .sw-band-paper #sw-steps .sw-step{background:var(--sw-bg)}}
 #swend div.sw-band-paper{display:flow-root}
+
+/* Écriture manuscrite : Caveat (licence OFL, assets/fonts) quand Segoe Print
+   et Bradley Hand manquent (Android, Linux). Téléchargée seulement si utilisée. */
+@font-face{font-family:'Caveat';src:url(fonts/caveat-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+/* Pied de page en bas de l'écran sur les pages courtes (Contact). */
+#swend{min-height:100vh;display:flex;flex-direction:column}
+#swend main{flex:1 0 auto}
+
+/* Lancement : lien « Être prévenu ». */
+#swend nav .sw-launch-badge{cursor:pointer;text-decoration:none}
+#swend nav .sw-launch-badge:hover{background:var(--sw-wine);color:var(--sw-paper)}
+#swend .sw-finale .sw-notify{margin-top:18px}
+
+/* Questions fréquentes (repliables). */
+#swend .sw-faq{padding:45px 7% 50px}
+#swend .sw-faq h2{font-size:30px;margin-bottom:0}
+#swend .sw-faq-list{max-width:760px;margin-top:22px;border-top:1px solid var(--sw-line)}
+#swend .sw-faq details{border-bottom:1px solid var(--sw-line)}
+#swend .sw-faq summary{cursor:pointer;list-style:none;position:relative;padding:15px 36px 15px 0;font:400 18px/1.4 Georgia,serif;color:var(--sw-ink)}
+#swend .sw-faq summary::-webkit-details-marker{display:none}
+#swend .sw-faq summary::after{content:"+";position:absolute;right:6px;top:11px;font:400 24px/1 Georgia,serif;color:var(--sw-wine)}
+#swend .sw-faq details[open] summary::after{content:"–"}
+#swend .sw-faq details p{margin:0 0 18px;max-width:640px}
+#swend .sw-faq summary:focus-visible{outline:2px solid var(--sw-wine);outline-offset:3px}
+
+/* Page restaurants : lien vers le concept, adresse visible. */
+#swend .sw-inline-link{border:0;background:transparent;padding:0;font:inherit;color:var(--sw-wine);text-decoration:underline;text-underline-offset:3px;cursor:pointer;white-space:nowrap}
+#swend .sw-restaurant-cta .sw-address-line{flex-basis:100%;max-width:none;margin:0;font-size:13px;color:#715448}
+#swend .sw-address-line a{color:var(--sw-wine)}
+#swend .sw-address-line .sw-copy{padding:0 0 0 8px;font-size:13px}
+#swend .sw-address-line .sw-copy-status{display:inline;margin:0 0 0 8px;min-height:0;font-size:13px}
+
+/* Carte « attention » plus petite. */
+#swend .sw-personal-touch .sw-flip{max-width:330px;justify-self:center}
+
+/* Téléphone : en-tête compact, phrase d'explication avant la carte. */
+@media(max-width:620px){
+  #swend header{padding:14px 5% 10px;row-gap:2px}
+  #swend nav .sw-launch-badge{display:none}
+  #swend .sw-hero .sw-lead{order:1;margin:14px 0 26px}
+  #swend .sw-hero .sw-flip{order:2}
+  #swend .sw-hero .sw-actions{order:3}
+  #swend .sw-faq{padding:34px 5% 40px}
+  #swend .sw-faq h2{font-size:26px}
+  #swend .sw-faq summary{font-size:17px}
+}
+
+/* FAQ : lien vers la page complète, et page FAQ. */
+#swend .sw-faq-more{display:inline-block;margin-top:18px}
+#swend .sw-faq-page{padding:58px 7% 60px;max-width:900px}
+#swend .sw-faq-page h1{margin-bottom:6px}
+#swend .sw-faq-page h2{font-size:22px;margin:38px 0 0}
+#swend .sw-faq-contact{margin-top:34px;font-size:14px;color:#715448}
+#swend .sw-faq-contact a{color:var(--sw-wine);text-decoration:underline}
+@media(max-width:620px){#swend .sw-faq-page{padding:34px 5% 44px}#swend .sw-faq-page h2{font-size:20px;margin-top:30px}}
+@media(max-width:620px){#swend .sw-footer-links{gap:0 18px}}
+#swend .sw-band-paper+.sw-ending{border-top:0;margin-top:30px;padding-top:0}

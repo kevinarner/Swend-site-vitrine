@@ -26,7 +26,7 @@
       <button type="button" class="cursor-interaction" data-page="concept" aria-current="page">Découvrir Swend</button>
       <button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button>
       <button type="button" class="cursor-interaction" data-page="contact">Contact</button>
-      <span class="sw-launch-badge">Lancement prochain</span>
+      <a class="sw-launch-badge" data-email data-email-objet="Prévenez-moi du lancement de Swend">Être prévenu du lancement</a>
     </nav>
   </header>
   <main>
@@ -86,8 +86,8 @@
         <p class="sw-eyebrow">Comment ça marche</p>
         <h2>Un rendez-vous pour lequel on s’engage : un Swend.</h2>
         <div class="sw-grid">
-          <article class="sw-step"><h3>Scellez votre Swend.</h3><p>Invitez un ami et choisissez ensemble un restaurant, une date et une heure. Pour déjeuner ou dîner, à vous de décider.</p></article>
-          <article class="sw-step"><h3>N’en parlez plus jusqu’au jour J</h3><p>Une fois votre Swend scellé, vous vous engagez à être là et vous n’en reparlez plus jusqu’au jour J. Pas même un <span class="sw-keep-together">« toujours bon pour demain ? ».</span></p></article>
+          <article class="sw-step"><h3>Scellez votre Swend.</h3><p>Choisissez un restaurant parmi nos partenaires et proposez une ou plusieurs dates à un ami. Il choisit celle qui lui convient. Pour déjeuner ou dîner, à vous de décider.</p></article>
+          <article class="sw-step"><h3>N’en parlez plus jusqu’au jour J.</h3><p>Une fois votre Swend scellé, vous vous engagez à être là et vous n’en reparlez plus jusqu’au jour J. Pas même un <span class="sw-keep-together">« toujours bon pour demain ? ».</span></p></article>
           <article class="sw-step"><h3>Découvrez qui est là.</h3><p>Le jour venu, rendez-vous au restaurant. Vous y retrouvez votre ami ou, s’il a finalement un empêchement, la personne qu’il a choisie pour partager ce repas avec vous.</p></article>
         </div>
       </section>
@@ -97,7 +97,7 @@
       <section class="sw-app-preview" aria-labelledby="sw-app-preview-title">
         <div class="sw-app-preview-copy">
           <p class="sw-eyebrow">Bientôt dans l’application</p>
-          <h2 id="sw-app-preview-title">Votre prochain swend.</h2>
+          <h2 id="sw-app-preview-title">Votre prochain Swend.</h2>
           <p class="sw-lead">Vous pensez à quelqu’un ?</p>
           <p>Choisissez la personne avec qui vous voulez partager ce moment. L’application vous accompagne ensuite pour préparer votre Swend.</p>
           <span class="sw-hand sw-app-annotation">C’est noté. C’est promis.</span>
@@ -120,7 +120,17 @@
           <p class="sw-purpose">Swend est né pour redonner du poids à nos « on se voit », faire du rendez-vous un engagement auquel on tient, et de l’attente une partie du plaisir.</p>
         </div>
       </section>
-<section class="sw-finale"><span class="sw-hand">À vous de jouer.</span><h2>Et si on faisait un Swend ?</h2><p>Vous avez déjà quelqu’un en tête ?</p><p class="sw-soon">L’app Swend ouvre bientôt. Gardez cette personne en tête.</p></section>
+<section class="sw-faq" aria-labelledby="sw-faq-title">
+        <p class="sw-eyebrow">Questions fréquentes</p>
+        <h2 id="sw-faq-title">Quelques précisions.</h2>
+        <div class="sw-faq-list">
+          <details><summary>Swend est-il gratuit&nbsp;?</summary><p>Oui, l’application est gratuite.</p></details>
+          <details><summary>Où fonctionne Swend&nbsp;?</summary><p>À Paris, pour commencer.</p></details>
+          <details><summary>Puis-je refuser la personne qui vient à la place de mon ami&nbsp;?</summary><p>Non, puisque vous ne savez pas qui viendra&nbsp;: c’est tout le principe. Mais c’est forcément quelqu’un que votre ami a choisi, en qui il a confiance, et qui a lui-même accepté de venir.</p></details>
+        </div>
+        <button type="button" class="sw-inline-link sw-faq-more cursor-interaction" data-page="faq">Toutes les questions&nbsp;→</button>
+      </section>
+<section class="sw-finale"><span class="sw-hand">À vous de jouer.</span><h2>Et si on faisait un Swend ?</h2><p>Vous avez déjà quelqu’un en tête ?</p><p class="sw-soon">L’app Swend ouvre bientôt. Gardez cette personne en tête.</p><a class="sw-link sw-notify" data-email data-email-objet="Prévenez-moi du lancement de Swend">Être prévenu du lancement →</a></section>
     </div>
     <div data-content="restaurants" hidden>
       <section class="sw-restaurant-intro" aria-labelledby="sw-restaurant-intro-title">
@@ -128,10 +138,11 @@
           <div class="sw-restaurant-hero-copy">
             <p class="sw-eyebrow">Restaurants partenaires</p>
             <h1 id="sw-restaurant-intro-title">Faites découvrir votre table.<br>Donnez envie d’y revenir.</h1>
-            <p class="sw-lead">Deux personnes choisissent votre établissement pour un rendez-vous fixé à l’avance, dont elles ne parlent plus jusqu’au jour J.</p>
+            <p class="sw-lead">Avec Swend, deux amis fixent un repas au restaurant au moins quinze jours à l’avance, et s’engagent à y être. <button type="button" class="sw-inline-link cursor-interaction" data-page="concept">Découvrir le concept&nbsp;→</button></p>
             <div class="sw-restaurant-cta">
               <a class="sw-link" data-email data-email-boite="restaurant" data-email-objet="Restaurant partenaire">Échangeons sur votre restaurant →</a>
               <p>Faites partie des premiers restaurants à accueillir l’expérience Swend.</p>
+              <p class="sw-address-line">Ou écrivez-nous à <a data-email="texte" data-email-boite="restaurant" data-email-objet="Restaurant partenaire">restaurant [arobase] swend.fr</a> <button type="button" class="sw-copy cursor-interaction" data-email-boite="restaurant">Copier</button><span class="sw-copy-status" role="status" aria-live="polite"></span></p>
             </div>
           </div>
           <div class="sw-tent" role="img" aria-label="Chevalet posé sur une table : Réservé, Swend, table pour deux, mercredi à 19h30.">
@@ -160,7 +171,7 @@
         <div class="sw-app-preview-copy">
           <p class="sw-eyebrow">Bientôt dans l’application</p>
           <h2 id="sw-restaurant-app-title">Votre prochaine table.</h2>
-          <p>Quand deux personnes préparent leur Swend, elles choisissent la date et le lieu parmi nos établissements partenaires.</p>
+          <p>Quand quelqu’un prépare un Swend, il choisit le restaurant parmi nos établissements partenaires.</p>
         </div>
         <figure class="sw-phone-figure">
           <div class="sw-phone-frame">
@@ -171,8 +182,8 @@
       </section>
 <section class="sw-story sw-restaurant-story" aria-labelledby="sw-restaurant-fit-title">
   <div class="sw-story-inner">
-    <p class="sw-eyebrow">Les lieux où l’on se retrouve</p>
-    <h2 id="sw-restaurant-fit-title">Des restaurants swendy.</h2>
+    <p class="sw-eyebrow">L’esprit des lieux</p>
+    <h2 id="sw-restaurant-fit-title">Des restaurants où l’on aime se retrouver.</h2>
     <p>Des lieux chaleureux, plutôt intimistes, où l’on se sent bien accueilli et où le service est attentionné. Des tables où l’on prend plaisir à se retrouver, à prendre son temps et à se parler.</p>
   </div>
 </section>
@@ -229,6 +240,16 @@
       </section>
 
       <section class="sw-note"><div><p class="sw-eyebrow">Un modèle à construire ensemble</p><h2>Comment Swend est-il rémunéré&nbsp;?</h2></div><div><p><strong>Une commission</strong> : par couvert servi ou en pourcentage de l’addition, à convenir avec&nbsp;vous.</p><p><strong>Sans engagement</strong> : vous arrêtez quand vous voulez.</p></div></section>
+<section class="sw-faq sw-band-paper" aria-labelledby="sw-faq-resto-title">
+        <p class="sw-eyebrow">Questions fréquentes</p>
+        <h2 id="sw-faq-resto-title">Quelques précisions.</h2>
+        <div class="sw-faq-list">
+          <details><summary>Qui paie l’addition&nbsp;?</summary><p>Ceux qui participent au Swend, sur place, comme pour toute réservation.</p></details>
+          <details><summary>Que se passe-t-il en cas d’annulation&nbsp;?</summary><p>Vous êtes prévenu immédiatement. C’est aussi le cas si les deux participants font chacun appel à un remplaçant&nbsp;: le Swend est alors annulé.</p></details>
+          <details><summary>En quoi Swend est-il différent d’une plateforme de réservation&nbsp;?</summary><p>Swend vous amène de nouveaux clients, avec des rendez-vous fixés au moins quinze jours à l’avance, auxquels ils se sont engagés. Et si l’un d’eux a un empêchement, quelqu’un vient à sa place plutôt que d’annuler.</p></details>
+        </div>
+        <button type="button" class="sw-inline-link sw-faq-more cursor-interaction" data-page="faq">Toutes les questions&nbsp;→</button>
+      </section>
       <div class="sw-ending"><div><h2>Et si l’aventure commençait chez vous ?</h2><p>Parlons de votre établissement et de vos envies.</p><p class="sw-team">Swend est porté par Kevin Arner et Eliot Schlang, à Paris.</p><p class="sw-soon sw-soon-restaurant">Swend ouvre bientôt. Les premiers restaurants partenaires accueilleront les premiers Swends.</p></div><a class="sw-link" data-email data-email-boite="restaurant" data-email-objet="Restaurant partenaire">Nous contacter →</a></div>
     </div>
 <div data-content="contact" hidden>
@@ -242,6 +263,31 @@
       <button class="sw-copy cursor-interaction" type="button">Copier l’adresse</button>
     </div>
     <p class="sw-copy-status" role="status" aria-live="polite"></p>
+  </section>
+</div>
+<div data-content="faq" hidden>
+  <section class="sw-faq sw-faq-page" aria-labelledby="sw-faq-page-title">
+    <p class="sw-eyebrow">FAQ</p>
+    <h1 id="sw-faq-page-title">Questions fréquentes</h1>
+    <h2>Pour les utilisateurs</h2>
+    <div class="sw-faq-list">
+          <details><summary>Swend est-il gratuit&nbsp;?</summary><p>Oui, l’application est gratuite.</p></details>
+          <details><summary>Où fonctionne Swend&nbsp;?</summary><p>À Paris, pour commencer.</p></details>
+          <details><summary>Combien de temps à l’avance&nbsp;?</summary><p>Un Swend se fixe au moins quinze jours avant le rendez-vous.</p></details>
+          <details><summary>Qui choisit le restaurant&nbsp;?</summary><p>Celui qui propose le Swend, parmi nos restaurants partenaires.</p></details>
+          <details><summary>Qui réserve la table&nbsp;?</summary><p>Swend s’en occupe pour vous.</p></details>
+          <details><summary>Qui paie le repas&nbsp;?</summary><p>Ceux qui partagent le Swend, au restaurant, comme d’habitude.</p></details>
+          <details><summary>Puis-je refuser la personne qui vient à la place de mon ami&nbsp;?</summary><p>Non, puisque vous ne savez pas qui viendra&nbsp;: c’est tout le principe. Mais c’est forcément quelqu’un que votre ami a choisi, en qui il a confiance, et qui a lui-même accepté de venir.</p></details>
+          <details><summary>Et si nous avons tous les deux un empêchement&nbsp;?</summary><p>Si chacun de vous se fait remplacer, le Swend est annulé&nbsp;: vous êtes prévenus tous les deux, ainsi que le restaurant.</p></details>
+          <details><summary>Peut-on annuler un Swend&nbsp;?</summary><p>Oui, chacun des deux peut l’annuler. Mais tout l’esprit de Swend est de s’y tenir.</p></details>
+    </div>
+    <h2>Pour les restaurants</h2>
+    <div class="sw-faq-list">
+          <details><summary>Qui paie l’addition&nbsp;?</summary><p>Ceux qui participent au Swend, sur place, comme pour toute réservation.</p></details>
+          <details><summary>Que se passe-t-il en cas d’annulation&nbsp;?</summary><p>Vous êtes prévenu immédiatement. C’est aussi le cas si les deux participants font chacun appel à un remplaçant&nbsp;: le Swend est alors annulé.</p></details>
+          <details><summary>En quoi Swend est-il différent d’une plateforme de réservation&nbsp;?</summary><p>Swend vous amène de nouveaux clients, avec des rendez-vous fixés au moins quinze jours à l’avance, auxquels ils se sont engagés. Et si l’un d’eux a un empêchement, quelqu’un vient à sa place plutôt que d’annuler.</p></details>
+    </div>
+    <p class="sw-faq-contact">Une autre question&nbsp;? Écrivez-nous à <a data-email="texte">contact [arobase] swend.fr</a>.</p>
   </section>
 </div>
 <div data-content="mentions-legales" hidden>
@@ -262,7 +308,7 @@
   </section>
 </div>
   </main>
-  <footer><a class="sw-logo-link" href="/"><img class="sw-logo-image" src="assets/swend-logo-138.png" srcset="assets/swend-logo-138.png 1x, assets/swend-logo-138@2x.png 2x, assets/swend-logo-138@3x.png 3x" alt="Swend"></a><div class="sw-footer-links"><button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button><a data-email="texte">contact [arobase] swend.fr</a><button type="button" class="cursor-interaction" data-page="mentions-legales">Mentions légales</button></div></footer>
+  <footer><a class="sw-logo-link" href="/"><img class="sw-logo-image" src="assets/swend-logo-138.png" srcset="assets/swend-logo-138.png 1x, assets/swend-logo-138@2x.png 2x, assets/swend-logo-138@3x.png 3x" alt="Swend"></a><div class="sw-footer-links"><button type="button" class="cursor-interaction" data-page="restaurants">Pour les restaurants</button><a data-email="texte">contact [arobase] swend.fr</a><button type="button" class="cursor-interaction" data-page="faq">FAQ</button><button type="button" class="cursor-interaction" data-page="mentions-legales">Mentions légales</button></div></footer>
 </div>
 <script src="assets/site.js"></script>
 </body>
