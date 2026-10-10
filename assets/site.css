@@ -56,6 +56,7 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-soon{margin:0;color:var(--sw-wine);font-size:15px;font-weight:600}
     #swend .sw-finale .sw-soon{margin-top:18px}
     #swend .sw-ending .sw-soon-restaurant{margin-top:10px;font-size:14px}
+    #swend .sw-ending .sw-team{margin-top:6px;font-size:14px;color:#715448}
     #swend .sw-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
     #swend .sw-discover{background:transparent;border:0;text-decoration:underline;padding:10px 0;font-size:13px}
     #swend .sw-hand{font-family:'Segoe Print','Bradley Hand',cursive;font-style:italic;color:var(--sw-wine);font-size:25px;transform:rotate(-7deg);display:block;margin:0 0 17px}
