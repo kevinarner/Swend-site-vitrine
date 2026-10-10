@@ -230,8 +230,8 @@ body{margin:0;background:#fbf3e5}
 /* Page restaurants : lien vers le concept, adresse visible. */
 #swend .sw-inline-link{border:0;background:transparent;padding:0;font:inherit;color:var(--sw-wine);text-decoration:underline;text-underline-offset:3px;cursor:pointer;white-space:nowrap}
 #swend .sw-restaurant-cta .sw-address-line{flex-basis:100%;max-width:none;margin:0;font-size:13px;color:#715448}
-#swend .sw-address-line a{color:var(--sw-wine)}
-#swend .sw-address-line .sw-copy{padding:0 0 0 8px;font-size:13px}
+#swend .sw-address-line a{color:#715448;text-decoration:none}
+#swend .sw-address-line .sw-copy{padding:0;font-size:13px}
 #swend .sw-address-line .sw-copy-status{display:inline;margin:0 0 0 8px;min-height:0;font-size:13px}
 
 /* Carte « attention » plus petite. */
