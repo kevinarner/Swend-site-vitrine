@@ -13,4 +13,4 @@ Pas de build : les fichiers sont servis tels quels.
 Prévisualisation locale : `python3 -m http.server` à la racine, puis http://localhost:8000.
 - Avant le lancement : aucun lien vers l’application (`kevinarner.github.io/le_pacte`) ; lien « Être prévenu du lancement » (e-mail prérempli vers contact@, aucune donnée collectée par le site) dans l’en-tête et en fin de page, et phrases d’annonce (`sw-soon`). L’application reste accessible à son adresse pour les fondateurs et les testeurs.
 - Écriture manuscrite : Segoe Print ou Bradley Hand quand l’appareil les a, sinon Caveat (licence OFL, `assets/fonts/`, hébergée sur le site : aucun appel à un service tiers).
-- Animations : apparition au défilement, sceau « tamponné », chevalet qui se pose, étapes numérotées sur ordinateur, en-tête fixé en haut (`assets/site.js`). Désactivées avec le réglage « réduire les animations » ; sans JavaScript, tout reste visible.
+- Animations : apparition au défilement, sceau « tamponné », chevalet qui se pose, en-tête fixé en haut (`assets/site.js`). Désactivées avec le réglage « réduire les animations » ; sans JavaScript, tout reste visible.

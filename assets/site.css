@@ -281,12 +281,6 @@ body{margin:0;background:#fbf3e5}
 #swend.sw-anim .sw-settle{opacity:0;translate:0 -28px;transition:opacity .6s ease,translate .8s cubic-bezier(.25,1.2,.4,1)}
 #swend.sw-anim .sw-settle.sw-visible{opacity:1;translate:0 0}
 
-/* Étapes numérotées sur ordinateur (les deux pages). */
-@media(min-width:621px){
-  #swend [data-content="restaurants"] .sw-grid,#swend #sw-steps .sw-grid{counter-reset:sw-num}
-  #swend [data-content="restaurants"] .sw-step::before,#swend #sw-steps .sw-step::before{counter-increment:sw-num;content:counter(sw-num);display:block;font:400 46px/1 Georgia,serif;color:#c9a1ab;margin:0 0 12px}
-}
-
 /* En-tête qui reste en haut de l'écran. overflow:clip (au lieu de hidden)
    laisse fonctionner position:sticky ; les navigateurs anciens gardent hidden. */
 #swend{overflow:clip}
