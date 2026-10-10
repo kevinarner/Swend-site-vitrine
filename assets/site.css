@@ -342,3 +342,7 @@ body{margin:0;background:#fbf3e5}
   @keyframes sw-nav-cote{0%,25%{opacity:0;transform:translate(112px,-49px) scale(.8)}100%{opacity:1;transform:translate(90px,-49px) scale(.8)}}
 }
 #swend nav button{-webkit-tap-highlight-color:transparent}
+/* Fin de la page restaurants : la prise de contact regroupée. */
+#swend .sw-ending .sw-ending-lead{font:400 20px/1.4 Georgia,serif;color:var(--sw-wine);margin:10px 0 6px;max-width:560px}
+#swend .sw-ending-cta{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+#swend .sw-ending-cta .sw-address-line{margin:0;font-size:13px;color:#715448}
