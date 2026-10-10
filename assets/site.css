@@ -195,3 +195,8 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-tent-seal{width:66px;height:66px;margin-top:2px;transform:rotate(-6deg)}
 #swend .sw-tent-seal .sw-seal-logo{width:58px}
 #swend .sw-note strong{font-weight:600;color:var(--sw-wine)}
+
+/* Page restaurants : fonds alternés (étapes et histoire sur fond papier). */
+#swend .sw-band-paper{background:var(--sw-paper)}
+#swend .sw-restaurant-story{margin:0}
+@media(max-width:620px){#swend .sw-band-paper .sw-step{background:var(--sw-bg)}}
