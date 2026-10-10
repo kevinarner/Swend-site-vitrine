@@ -51,6 +51,11 @@ body{margin:0;background:#fbf3e5}
     #swend .sw-logo-image{width:138px;height:auto;display:block;filter:brightness(1.2) contrast(1.3);mix-blend-mode:multiply}
     #swend .sw-logo-link{display:block;flex:none;line-height:0}
     #swend nav .sw-app{background:var(--sw-wine);color:var(--sw-paper);border-radius:24px;padding:10px 16px}
+    /* Avant le lancement : pas de lien vers l'app. Badge non cliquable et phrases d'annonce. */
+    #swend nav .sw-launch-badge{border:1px solid var(--sw-wine);color:var(--sw-wine);border-radius:24px;padding:9px 15px;cursor:default;white-space:nowrap}
+    #swend .sw-soon{margin:0;color:var(--sw-wine);font-size:15px;font-weight:600}
+    #swend .sw-finale .sw-soon{margin-top:18px}
+    #swend .sw-ending .sw-soon-restaurant{margin-top:10px;font-size:14px}
     #swend .sw-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
     #swend .sw-discover{background:transparent;border:0;text-decoration:underline;padding:10px 0;font-size:13px}
     #swend .sw-hand{font-family:'Segoe Print','Bradley Hand',cursive;font-style:italic;color:var(--sw-wine);font-size:25px;transform:rotate(-7deg);display:block;margin:0 0 17px}
