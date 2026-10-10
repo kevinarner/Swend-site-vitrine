@@ -196,7 +196,8 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-tent-seal .sw-seal-logo{width:58px}
 #swend .sw-note strong{font-weight:600;color:var(--sw-wine)}
 
-/* Page restaurants : fonds alternés (étapes et histoire sur fond papier). */
+/* Fonds alternés : étapes (deux pages) et histoire restaurants sur fond papier. */
 #swend .sw-band-paper{background:var(--sw-paper)}
 #swend .sw-restaurant-story{margin:0}
-@media(max-width:620px){#swend .sw-band-paper .sw-step{background:var(--sw-bg)}}
+@media(max-width:620px){#swend .sw-band-paper .sw-step,#swend .sw-band-paper #sw-steps .sw-step{background:var(--sw-bg)}}
+#swend div.sw-band-paper{display:flow-root}
