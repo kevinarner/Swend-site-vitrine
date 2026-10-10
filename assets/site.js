@@ -110,7 +110,7 @@
       // en clair dans le code de la page (moins de collecte par les robots).
       const email=['contact','swend.fr'].join('@');
       root.querySelectorAll('[data-email]').forEach(lien=>{
-        lien.href='mailto:'+email;
+        lien.href='mailto:'+email+(lien.dataset.emailObjet?'?subject='+encodeURIComponent(lien.dataset.emailObjet):'');
         if(lien.dataset.email==='texte')lien.textContent=email;
       });
 
