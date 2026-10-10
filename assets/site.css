@@ -271,3 +271,33 @@ body{margin:0;background:#fbf3e5}
 #swend .sw-restaurant-flip .sw-attention-title{font-size:26px}
 #swend .sw-restaurant-flip .sw-attention-copy{font-size:15px;line-height:1.55;text-align:left;hyphens:manual}
 #swend .sw-restaurant-flip .sw-back .sw-flip-hint{padding-top:12px}
+
+/* Apparition au défilement (classes posées par site.js, seulement si les
+   animations ne sont pas réduites). */
+#swend.sw-anim .sw-reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+#swend.sw-anim .sw-reveal.sw-visible{opacity:1;transform:none}
+#swend.sw-anim .sw-stamp{opacity:0;scale:1.5;rotate:-18deg;transition:opacity .25s ease,scale .45s cubic-bezier(.3,1.5,.5,1),rotate .45s cubic-bezier(.3,1.5,.5,1)}
+#swend.sw-anim .sw-stamp.sw-visible{opacity:1;scale:1;rotate:0deg}
+#swend.sw-anim .sw-settle{opacity:0;translate:0 -28px;transition:opacity .6s ease,translate .8s cubic-bezier(.25,1.2,.4,1)}
+#swend.sw-anim .sw-settle.sw-visible{opacity:1;translate:0 0}
+
+/* Étapes numérotées sur ordinateur (les deux pages). */
+@media(min-width:621px){
+  #swend [data-content="restaurants"] .sw-grid,#swend #sw-steps .sw-grid{counter-reset:sw-num}
+  #swend [data-content="restaurants"] .sw-step::before,#swend #sw-steps .sw-step::before{counter-increment:sw-num;content:counter(sw-num);display:block;font:400 46px/1 Georgia,serif;color:#c9a1ab;margin:0 0 12px}
+}
+
+/* En-tête qui reste en haut de l'écran. overflow:clip (au lieu de hidden)
+   laisse fonctionner position:sticky ; les navigateurs anciens gardent hidden. */
+#swend{overflow:clip}
+#swend header{position:sticky;top:0;z-index:20;background:var(--sw-bg);transition:padding .25s ease,box-shadow .25s ease}
+#swend header .sw-logo-link{transition:transform .25s ease,margin .25s ease;transform-origin:left center}
+#swend header.sw-scrolled{padding-top:10px;padding-bottom:10px;box-shadow:0 2px 14px #39291f14}
+#swend header.sw-scrolled .sw-logo-link{transform:scale(.8);margin-right:-28px}
+@media(max-width:620px){
+  #swend header.sw-scrolled{flex-wrap:nowrap;padding:8px 4%}
+  #swend header.sw-scrolled .sw-logo-link{transform:scale(.6);margin-right:-55px}
+  #swend header.sw-scrolled nav{gap:10px;flex-wrap:nowrap}
+  #swend header.sw-scrolled nav button{font-size:12px;white-space:nowrap}
+}
+@media(max-width:380px){#swend header.sw-scrolled nav{gap:7px}#swend header.sw-scrolled nav button{font-size:11.5px}}

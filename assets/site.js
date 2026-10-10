@@ -139,4 +139,40 @@
         });
       });
       root.querySelector('[data-scroll]').addEventListener('click',()=>root.querySelector('#sw-steps').scrollIntoView({block:'start',behavior:'auto'}));
+
+      // En-tête fixé en haut : plus compact et ombré dès qu'on a défilé.
+      const entete=root.querySelector('header');
+      const suivreDefilement=()=>entete.classList.toggle('sw-scrolled',window.scrollY>10);
+      window.addEventListener('scroll',suivreDefilement,{passive:true});
+      suivreDefilement();
+
+      // Apparition au défilement. Sans IntersectionObserver ou avec
+      // « réduire les animations », rien ne change : tout reste visible.
+      const reduire=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduire&&'IntersectionObserver' in window){
+        // Élément observé -> éléments à révéler.
+        const cibles=new Map();
+        const marquer=(el,classe,delai,observe=el)=>{
+          if(!el)return;
+          el.classList.add(classe);
+          if(delai)el.style.transitionDelay=delai+'ms';
+          cibles.set(observe,[...(cibles.get(observe)||[]),el]);
+        };
+        root.querySelectorAll('[data-content="concept"],[data-content="restaurants"]').forEach(page=>{
+          page.querySelectorAll(':scope>section,:scope>div,:scope>.sw-restaurant-intro>*,:scope>div.sw-band-paper>*').forEach(el=>{
+            if(el.classList.contains('sw-restaurant-intro')||el.matches('div.sw-band-paper'))return;
+            marquer(el,'sw-reveal');
+          });
+          page.querySelectorAll('.sw-grid').forEach(grille=>grille.querySelectorAll('.sw-step').forEach((etape,i)=>marquer(etape,'sw-reveal',150*i)));
+          page.querySelectorAll('.sw-seal').forEach(sceau=>marquer(sceau,'sw-stamp',450));
+          marquer(page.querySelector('.sw-tent-card'),'sw-settle',150);
+        });
+        root.classList.add('sw-anim');
+        const observateur=new IntersectionObserver(entrees=>entrees.forEach(entree=>{
+          if(!entree.isIntersecting)return;
+          cibles.get(entree.target).forEach(el=>el.classList.add('sw-visible'));
+          observateur.unobserve(entree.target);
+        }),{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+        cibles.forEach((_,el)=>observateur.observe(el));
+      }
     })();
