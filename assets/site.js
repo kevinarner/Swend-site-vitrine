@@ -112,7 +112,10 @@
       const email=['contact','swend.fr'].join('@');
       root.querySelectorAll('[data-email]').forEach(lien=>{
         const adresse=lien.dataset.emailBoite?[lien.dataset.emailBoite,'swend.fr'].join('@'):email;
-        lien.href='mailto:'+adresse+(lien.dataset.emailObjet?'?subject='+encodeURIComponent(lien.dataset.emailObjet):'');
+        const params=[];
+        if(lien.dataset.emailObjet)params.push('subject='+encodeURIComponent(lien.dataset.emailObjet));
+        if(lien.dataset.emailCorps)params.push('body='+encodeURIComponent(lien.dataset.emailCorps.replace(/\r?\n/g,'\r\n')));
+        lien.href='mailto:'+adresse+(params.length?'?'+params.join('&'):'');
         if(lien.dataset.email==='texte')lien.textContent=adresse;
       });
 
